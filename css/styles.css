@@ -211,7 +211,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1); /* Fixed rgba value */
     padding: 0.5rem 1rem;
     border-radius: 10px;
     color: white;
@@ -395,7 +395,7 @@ button:hover {
 /* Calendar Sidebar */
 .calendar-sidebar {
     width: 250px;
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 247, 209, 0.05)); /* Subtle gradient */
     border-radius: 10px;
     padding: 1rem;
     margin-left: 1rem;
@@ -487,11 +487,30 @@ button:hover {
     flex: 1;
     margin-left: 1rem;
     margin-right: 1rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02)); /* Subtle gradient */
     border-radius: 10px;
     padding: 1rem;
     overflow-y: auto;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    position: relative; /* For loading overlay */
+}
+
+.calendar-main.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    animation: pulse 1s infinite ease-in-out; /* Loading animation */
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.5; }
 }
 
 .calendar-header {
@@ -549,7 +568,7 @@ button:hover {
 }
 
 .event {
-    background: #00f7d1;
+    background: #00f7d1; /* Default color */
     color: #1a1a1a;
     border-radius: 5px;
     padding: 0.2rem;
@@ -558,11 +577,35 @@ button:hover {
     width: 90%;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
+    position: relative; /* For tooltip */
+}
+
+.event.meeting {
+    background: #00f7d1; /* Teal for meetings */
+}
+
+.event.deadline {
+    background: #ff6b6b; /* Red for deadlines */
 }
 
 .event:hover {
     transform: scale(1.05);
     box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
+}
+
+.event[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10;
 }
 
 /* Week View */
@@ -580,7 +623,7 @@ button:hover {
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
-    min-height: 60px; /* Hour block height */
+    min-height: 120px; /* Hour block height */
     display: flex; /* For centering content */
     align-items: center; /* Vertically center */
     justify-content: center; /* Horizontally center (for day cells) */
@@ -595,7 +638,7 @@ button:hover {
     background: transparent;
     text-align: center; /* Center time labels horizontally */
     padding: 0.5rem;
-    min-height: 60px; /* Match the hour block height */
+    min-height: 120px; /* Match the hour block height */
     display: flex; /* For centering content */
     align-items: center; /* Vertically center */
     justify-content: flex-end; /* Align time labels to the right, but with flex for centering */
@@ -615,8 +658,8 @@ button:hover {
 .calendar-week-grid div:nth-child(8n + 9) {
     background: rgba(255, 255, 255, 0.1);
     font-weight: bold;
-    min-height: 25px; /* Reduced by half (from 50px to 25px) */
-    padding: 0.25rem; /* Reduced padding to fit smaller height */
+    min-height: 37.5px; /* Increased by 3x (from 12.5px to 37.5px) */
+    padding: 0.25rem; /* Adjusted padding to fit new height */
     line-height: 1; /* Minimize extra space */
     display: flex; /* For centering content */
     align-items: center; /* Vertically center */
@@ -632,7 +675,7 @@ button:hover {
 }
 
 .week-event {
-    background: #00f7d1;
+    background: #00f7d1; /* Default color */
     color: #1a1a1a;
     border-radius: 5px;
     padding: 0.2rem;
@@ -642,11 +685,35 @@ button:hover {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
+    position: relative; /* For tooltip */
+}
+
+.week-event.meeting {
+    background: #00f7d1; /* Teal for meetings */
+}
+
+.week-event.deadline {
+    background: #ff6b6b; /* Red for deadlines */
 }
 
 .week-event:hover {
     transform: scale(1.05);
     box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
+}
+
+.week-event[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10;
 }
 
 /* Today’s Schedule Section */
@@ -690,7 +757,7 @@ button:hover {
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
-    min-height: 60px; /* Ensure consistency with Week view */
+    min-height: 120px; /* Match Week view */
     display: flex; /* For centering content */
     align-items: center; /* Vertically center */
     justify-content: center; /* Horizontally center */
@@ -711,15 +778,39 @@ button:hover {
 }
 
 .day-event {
-    background: #00f7d1;
+    background: #00f7d1; /* Default color */
     color: #1a1a1a;
     border-radius: 5px;
     padding: 0.2rem;
     font-size: 0.8rem;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
+    position: relative; /* For tooltip */
+}
+
+.day-event.meeting {
+    background: #00f7d1; /* Teal for meetings */
+}
+
+.day-event.deadline {
+    background: #ff6b6b; /* Red for deadlines */
 }
 
 .day-event:hover {
     transform: scale(1.05);
     box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
+}
+
+.day-event[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 10;
 }
