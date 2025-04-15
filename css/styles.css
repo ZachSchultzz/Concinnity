@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: url('https://www.transparenttextures.com/patterns/stardust.png'), #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+h1 span {
+    color: #00f7d1;
+    font-weight: bold;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    background: #00f7d1;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 25px;
+    color: #1a1a1a;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background: #00d1b2;
+}
+
+.forgot-link {
+    color: #00f7d1;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-top: 0.5rem;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
