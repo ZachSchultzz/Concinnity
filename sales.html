@@ -12,6 +12,24 @@
             <div class="notifications">
                 Notifications (10)
                 <span class="dropdown-arrow">▼</span>
+                <div class="notifications-dropdown">
+                    <div class="notification-item">
+                        <p>New message from Alice Johnson</p>
+                        <span class="notification-time">10 minutes ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>Team meeting scheduled for 2:00 PM</p>
+                        <span class="notification-time">1 hour ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>File uploaded: Sales_Report.xlsx</p>
+                        <span class="notification-time">3 hours ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>Project deadline approaching</p>
+                        <span class="notification-time">Yesterday</span>
+                    </div>
+                </div>
             </div>
             <div class="company-name" id="companyName">Concinnity.Vision</div>
             <div class="search-bar">
@@ -20,22 +38,25 @@
             </div>
         </div>
         <div class="main-content">
-            <h2>Sales Page</h2>
-            <p>This is a placeholder for the Sales tab.</p>
-        </div>
-        <div class="nav-bar">
-            <a href="team.html" class="nav-item">👥<br>Team</a>
-            <a href="sales.html" class="nav-item">🤝<br>Sales</a>
-            <a href="messages.html" class="nav-item">💬<br>Messages</a>
-            <a href="calendar.html" class="nav-item">📅<br>Calendar</a>
-            <a href="files.html" class="nav-item">📁<br>Files</a>
-            <a href="account.html" class="nav-item">👤<br>Account</a>
-        </div>
-    </div>
-    <script>
-        // Retrieve company name from localStorage
-        const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
-        document.getElementById('companyName').textContent = companyName;
-    </script>
-</body>
-</html>
+            <h2>Sales</h2>
+            <div class="sales-container">
+                <div class="sales-stats">
+                    <div class="stat-card">
+                        <h3>Total Revenue</h3>
+                        <p>$150,000</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Deals Closed</h3>
+                        <p>25</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Pending Leads</h3>
+                        <p>10</p>
+                    </div>
+                </div>
+                <div class="sales-list">
+                    <div class="sale-item">
+                        <p>Client: Acme Corp</p>
+                        <p>Deal Value: $50,000</p>
+                        <p>Status: Closed</p>
+                    </div

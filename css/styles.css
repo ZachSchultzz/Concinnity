@@ -242,56 +242,162 @@ button:hover {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem; /* Reduced left/right padding to 1rem to match top/bottom padding of nav-item */
+    padding: 1rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     position: absolute;
     bottom: 20px;
-    width: 60%;
+    width: 70%; /* Slightly wider to accommodate extra tab */
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1); /* Fixed rgba value */
+    background: rgba(255, 255, 255, 0.1);
     padding: 0.5rem 1rem;
     border-radius: 10px;
     color: white;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: background 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .nav-item:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05); /* Slight scale-up on hover */
+    transform: scale(1.05);
 }
 
-/* Updated styles for the Team tab */
+/* Dashboard Tab Styles */
+.dashboard-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 1rem;
+}
+
+.overview-section {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02));
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.overview-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 10px rgba(0, 247, 209, 0.3);
+}
+
+.overview-section h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.overview-section h4 {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.view-more {
+    display: block;
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #00f7d1;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.view-more:hover {
+    text-decoration: underline;
+}
+
+/* Team Overview */
+.team-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.team-overview .team-card {
+    padding: 0.5rem;
+    box-shadow: none;
+}
+
+.team-overview .team-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Sales Overview */
+.sales-overview {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sales-overview .stat-card {
+    width: 45%;
+    padding: 0.5rem;
+}
+
+/* Messages Overview */
+.messages-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.messages-overview .message {
+    padding: 0.5rem;
+}
+
+/* Calendar Overview */
+.calendar-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Files Overview */
+.files-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Account Overview */
+.account-overview {
+    text-align: center;
+}
+
+/* Team Tab Styles */
 .team-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 300px;
+    width: 80%;
+    max-width: 800px;
     margin-top: 1rem;
 }
 
 .team-card {
-    background: rgba(255, 255, 255, 0.15);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02));
     border-radius: 10px;
     padding: 1rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .team-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 2px 10px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
+    box-shadow: 0 2px 10px rgba(0, 247, 209, 0.3);
 }
 
 .team-card h3 {
@@ -312,6 +418,11 @@ button:hover {
     margin: 0 auto 0.5rem;
 }
 
+.profile-pic.large {
+    width: 100px;
+    height: 100px;
+}
+
 .status {
     font-size: 0.9rem;
     margin: 0.5rem 0;
@@ -325,18 +436,84 @@ button:hover {
     color: rgba(255, 255, 255, 0.5);
 }
 
+/* Sales Tab Styles */
+.sales-container {
+    width: 80%;
+    max-width: 800px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02));
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sales-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    width: 30%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(0, 247, 209, 0.3);
+}
+
+.stat-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 1.5rem;
+    color: #00f7d1;
+}
+
+.sales-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sale-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 0.5rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sale-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.01);
+}
+
+.sale-item p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+}
+
 /* Chat Styles (for Messages Tab) */
 .chat-container {
     display: flex;
     width: 80%;
+    max-width: 800px;
     height: 70vh;
-    margin-top: 1rem;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02));
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .chat-sidebar {
     width: 30%;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
     padding: 1rem;
 }
 
@@ -362,8 +539,7 @@ button:hover {
 .chat-window {
     flex: 1;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    margin-left: 1rem;
+    border-radius: 0 10px 10px 0;
     display: flex;
     flex-direction: column;
 }
@@ -379,6 +555,7 @@ button:hover {
     padding: 0.5rem;
     border-radius: 5px;
     transition: background 0.3s ease;
+    position: relative;
 }
 
 .message.sent {
@@ -390,6 +567,17 @@ button:hover {
 .message.received {
     background: rgba(255, 255, 255, 0.1);
     margin-right: 20%;
+}
+
+.message p {
+    margin: 0;
+}
+
+.message-time {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.2rem;
+    display: block;
 }
 
 .chat-input {
@@ -430,6 +618,55 @@ button:hover {
     transform: scale(1.05);
 }
 
+/* Account Tab Styles */
+.account-container {
+    width: 80%;
+    max-width: 800px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02));
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.account-details {
+    text-align: center;
+}
+
+.account-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.account-details p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.2rem 0;
+}
+
+.account-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-btn {
+    background: #00f7d1;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+    background: #00d1b2;
+    transform: scale(1.05);
+}
+
 /* Calendar Container */
 .calendar-container {
     display: flex;
@@ -442,11 +679,11 @@ button:hover {
 /* Calendar Sidebar */
 .calendar-sidebar {
     width: 250px;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 247, 209, 0.05)); /* Subtle gradient */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 247, 209, 0.05));
     border-radius: 10px;
     padding: 1rem;
     margin-left: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .add-event-btn {
@@ -521,7 +758,7 @@ button:hover {
 }
 
 .mini-calendar-grid div:not(:empty):hover {
-    background: rgba(255, 255, 255, 0.1); /* Hover effect for mini calendar days */
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .today {
@@ -534,12 +771,12 @@ button:hover {
     flex: 1;
     margin-left: 1rem;
     margin-right: 1rem;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02)); /* Subtle gradient */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02));
     border-radius: 10px;
     padding: 1rem;
     overflow-y: auto;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-    position: relative; /* For loading overlay */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 .calendar-main.loading::before {
@@ -551,7 +788,7 @@ button:hover {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 10;
-    animation: pulse 1s infinite ease-in-out; /* Loading animation */
+    animation: pulse 1s infinite ease-in-out;
 }
 
 @keyframes pulse {
@@ -587,7 +824,7 @@ button:hover {
 }
 
 .calendar-grid div:hover {
-    background: rgba(255, 255, 255, 0.1); /* Hover effect for month view days */
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .calendar-grid div:first-child,
@@ -599,9 +836,9 @@ button:hover {
 .calendar-grid div:nth-child(7) {
     background: rgba(255, 255, 255, 0.1);
     font-weight: bold;
-    padding: 0.125rem; /* Reduced from 0.5rem to 0.125rem to shrink height by ~3/4th */
-    line-height: 1; /* Reduce line height to minimize space */
-    min-height: auto; /* Override min-height for header row */
+    padding: 0.125rem;
+    line-height: 1;
+    min-height: auto;
 }
 
 .empty-day {
@@ -615,7 +852,7 @@ button:hover {
 }
 
 .event {
-    background: #00f7d1; /* Default color */
+    background: #00f7d1;
     color: #1a1a1a;
     border-radius: 5px;
     padding: 0.2rem;
@@ -624,20 +861,20 @@ button:hover {
     width: 90%;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-    position: relative; /* For tooltip */
+    position: relative;
 }
 
 .event.meeting {
-    background: #00f7d1; /* Teal for meetings */
+    background: #00f7d1;
 }
 
 .event.deadline {
-    background: #ff6b6b; /* Red for deadlines */
+    background: #ff6b6b;
 }
 
 .event:hover {
     transform: scale(1.05);
-    box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
+    box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3);
 }
 
 .event[data-tooltip]:hover::after {
@@ -661,34 +898,34 @@ button:hover {
     grid-template-columns: 100px repeat(7, 1fr);
     gap: 2px;
     text-align: center;
-    height: 600px; /* Set a fixed height to enable scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
-    position: relative; /* For absolute positioning of events */
+    height: 600px;
+    overflow-y: auto;
+    position: relative;
 }
 
 .calendar-week-grid div {
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
-    min-height: 120px; /* Hour block height */
-    display: flex; /* For centering content */
-    align-items: center; /* Vertically center */
-    justify-content: center; /* Horizontally center (for day cells) */
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background 0.3s ease;
 }
 
 .calendar-week-grid div:hover:not(.time-slot):not(:nth-child(8n + 1)):not(:nth-child(8n + 2)):not(:nth-child(8n + 3)):not(:nth-child(8n + 4)):not(:nth-child(8n + 5)):not(:nth-child(8n + 6)):not(:nth-child(8n + 7)):not(:nth-child(8n + 8)):not(:nth-child(8n + 9)) {
-    background: rgba(255, 255, 255, 0.1); /* Hover effect for day cells */
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .calendar-week-grid .time-slot {
     background: transparent;
-    text-align: center; /* Center time labels horizontally */
+    text-align: center;
     padding: 0.5rem;
-    min-height: 120px; /* Match the hour block height */
-    display: flex; /* For centering content */
-    align-items: center; /* Vertically center */
-    justify-content: flex-end; /* Align time labels to the right, but with flex for centering */
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .calendar-week-grid div:nth-child(8n + 1) {
@@ -705,24 +942,24 @@ button:hover {
 .calendar-week-grid div:nth-child(8n + 9) {
     background: rgba(255, 255, 255, 0.1);
     font-weight: bold;
-    min-height: 37.5px; /* Increased by 3x (from 12.5px to 37.5px) */
-    padding: 0.25rem; /* Adjusted padding to fit new height */
-    line-height: 1; /* Minimize extra space */
-    display: flex; /* For centering content */
-    align-items: center; /* Vertically center */
-    justify-content: center; /* Horizontally center */
+    min-height: 37.5px;
+    padding: 0.25rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .today-column {
-    background: rgba(0, 247, 209, 0.1) !important; /* Highlight today’s column header */
+    background: rgba(0, 247, 209, 0.1) !important;
 }
 
 .today-column ~ div:nth-child(8n + 5) {
-    background: rgba(0, 247, 209, 0.1) !important; /* Highlight all cells in today’s column */
+    background: rgba(0, 247, 209, 0.1) !important;
 }
 
 .week-event {
-    background: #00f7d1; /* Default color */
+    background: #00f7d1;
     color: #1a1a1a;
     border-radius: 5px;
     padding: 0.2rem;
@@ -732,20 +969,20 @@ button:hover {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-    position: relative; /* For tooltip */
+    position: relative;
 }
 
 .week-event.meeting {
-    background: #00f7d1; /* Teal for meetings */
+    background: #00f7d1;
 }
 
 .week-event.deadline {
-    background: #ff6b6b; /* Red for deadlines */
+    background: #ff6b6b;
 }
 
 .week-event:hover {
     transform: scale(1.05);
-    box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
+    box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3);
 }
 
 .week-event[data-tooltip]:hover::after {
@@ -769,7 +1006,7 @@ button:hover {
     padding: 1rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .today-schedule h3 {
@@ -785,7 +1022,7 @@ button:hover {
 }
 
 .schedule-item:hover {
-    background: rgba(255, 255, 255, 0.1); /* Hover effect */
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .schedule-item p {
@@ -804,47 +1041,47 @@ button:hover {
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
-    min-height: 120px; /* Match Week view */
-    display: flex; /* For centering content */
-    align-items: center; /* Vertically center */
-    justify-content: center; /* Horizontally center */
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background 0.3s ease;
 }
 
 .calendar-day-grid div:hover:not(.time-slot) {
-    background: rgba(255, 255, 255, 0.1); /* Hover effect for day cells */
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .calendar-day-grid .time-slot {
     background: transparent;
-    text-align: center; /* Center time labels */
+    text-align: center;
     padding-right: 0.5rem;
-    display: flex; /* For centering content */
-    align-items: center; /* Vertically center */
-    justify-content: flex-end; /* Align to right, but with flex for centering */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .day-event {
-    background: #00f7d1; /* Default color */
+    background: #00f7d1;
     color: #1a1a1a;
     border-radius: 5px;
     padding: 0.2rem;
     font-size: 0.8rem;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-    position: relative; /* For tooltip */
+    position: relative;
 }
 
 .day-event.meeting {
-    background: #00f7d1; /* Teal for meetings */
+    background: #00f7d1;
 }
 
 .day-event.deadline {
-    background: #ff6b6b; /* Red for deadlines */
+    background: #ff6b6b;
 }
 
 .day-event:hover {
     transform: scale(1.05);
-    box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
+    box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3);
 }
 
 .day-event[data-tooltip]:hover::after {
@@ -866,10 +1103,10 @@ button:hover {
 .files-container {
     width: 80%;
     max-width: 800px;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02)); /* Subtle gradient */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02));
     border-radius: 10px;
     padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .upload-btn {

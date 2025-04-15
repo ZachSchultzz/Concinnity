@@ -3,29 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concinnity Login</title>
+    <title>Login - Concinnity</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to <span>Concinnity</span></h1>
+        <h1>Welcome to <span>Concinnity.Vision</span></h1>
         <form id="loginForm">
             <div class="form-row">
-                <input type="text" id="businessName" placeholder="Business Name" required>
-                <input type="text" id="bin" placeholder="BIN" required>
+                <input type="text" id="businessName" placeholder="Business Name" required />
+                <input type="text" id="businessID" placeholder="Business ID Number" required />
             </div>
             <div class="form-row">
-                <input type="text" id="firstName" placeholder="First Name" required>
-                <input type="text" id="lastName" placeholder="Last Name" required>
+                <input type="text" id="firstName" placeholder="First Name" required />
+                <input type="text" id="lastName" placeholder="Last Name" required />
             </div>
-            <div class="form-row">
-                <input type="password" id="password" placeholder="Password" required>
-                <input type="text" id="pin" placeholder="PIN" required>
-            </div>
+            <input type="password" id="password" placeholder="Password" required />
+            <input type="text" id="pin" placeholder="4 Digit Pin" required />
             <button type="submit">Login</button>
-            <a href="#" class="forgot-link">Forgot Password/PIN</a>
+            <a href="#" class="forgot-link">Forgot Password?</a>
         </form>
     </div>
-    <script src="js/script.js"></script>
+    <script>
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const businessName = document.getElementById('businessName').value;
+            const businessID = document.getElementById('businessID').value;
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const password = document.getElementById('password').value;
+            const pin = document.getElementById('pin').value;
+
+            // Mock authentication logic
+            if (
+                businessName === 'Concinnity.Vision' &&
+                businessID === '1234' &&
+                firstName === 'Zach' &&
+                lastName === 'Schultz' &&
+                password === 'Password123' &&
+                pin === '4321'
+            ) {
+                // Store business name in localStorage
+                localStorage.setItem('companyName', businessName);
+
+                // Redirect to dashboard page
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Concinnity Dashboard</title>
+    <title>Dashboard - Concinnity</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -12,17 +12,132 @@
             <div class="notifications">
                 Notifications (10)
                 <span class="dropdown-arrow">▼</span>
+                <div class="notifications-dropdown">
+                    <div class="notification-item">
+                        <p>New message from Alice Johnson</p>
+                        <span class="notification-time">10 minutes ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>Team meeting scheduled for 2:00 PM</p>
+                        <span class="notification-time">1 hour ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>File uploaded: Sales_Report.xlsx</p>
+                        <span class="notification-time">3 hours ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>Project deadline approaching</p>
+                        <span class="notification-time">Yesterday</span>
+                    </div>
+                </div>
             </div>
-            <div class="company-name" id="companyName">Company Name Here</div>
+            <div class="company-name" id="companyName">Concinnity.Vision</div>
             <div class="search-bar">
                 <input type="text" placeholder="Search" />
                 <span class="search-icon">🔍</span>
             </div>
         </div>
         <div class="main-content">
-            <!-- Main content area, currently empty -->
+            <h2>Dashboard</h2>
+            <div class="dashboard-overview">
+                <!-- Team Overview -->
+                <div class="overview-section">
+                    <h3>Team Overview</h3>
+                    <div class="team-overview">
+                        <div class="team-card">
+                            <div class="profile-pic"></div>
+                            <h4>Alice Johnson</h4>
+                            <p>Project Manager</p>
+                            <p class="status online">Online</p>
+                        </div>
+                        <div class="team-card">
+                            <div class="profile-pic"></div>
+                            <h4>Bob Carter</h4>
+                            <p>Developer</p>
+                            <p class="status offline">Offline</p>
+                        </div>
+                    </div>
+                    <a href="team.html" class="view-more">View More</a>
+                </div>
+                <!-- Sales Overview -->
+                <div class="overview-section">
+                    <h3>Sales Overview</h3>
+                    <div class="sales-overview">
+                        <div class="stat-card">
+                            <h4>Total Revenue</h4>
+                            <p>$150,000</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Deals Closed</h4>
+                            <p>25</p>
+                        </div>
+                    </div>
+                    <a href="sales.html" class="view-more">View More</a>
+                </div>
+                <!-- Messages Overview -->
+                <div class="overview-section">
+                    <h3>Recent Messages</h3>
+                    <div class="messages-overview">
+                        <div class="message received">
+                            <p>Alice Johnson: Can you review the project proposal?</p>
+                            <span class="message-time">10:00 AM</span>
+                        </div>
+                        <div class="message sent">
+                            <p>You: Sure, I’ll get back to you by noon.</p>
+                            <span class="message-time">10:05 AM</span>
+                        </div>
+                    </div>
+                    <a href="messages.html" class="view-more">View More</a>
+                </div>
+                <!-- Calendar Overview -->
+                <div class="overview-section">
+                    <h3>Upcoming Events</h3>
+                    <div class="calendar-overview">
+                        <div class="schedule-item">
+                            <p>Team Meeting, 10:00 AM - 11:00 AM, with Alice Johnson</p>
+                        </div>
+                        <div class="schedule-item">
+                            <p>Project Deadline, April 23, 5:00 PM</p>
+                        </div>
+                    </div>
+                    <a href="calendar.html" class="view-more">View More</a>
+                </div>
+                <!-- Files Overview -->
+                <div class="overview-section">
+                    <h3>Recent Files</h3>
+                    <div class="files-overview">
+                        <div class="file-item">
+                            <div class="file-icon">📄</div>
+                            <div class="file-details">
+                                <p class="file-name">Project_Proposal.pdf</p>
+                                <p class="file-meta">PDF • 1.2 MB</p>
+                            </div>
+                        </div>
+                        <div class="file-item">
+                            <div class="file-icon">📸</div>
+                            <div class="file-details">
+                                <p class="file-name">Team_Photo.jpg</p>
+                                <p class="file-meta">JPG • 3.5 MB</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="files.html" class="view-more">View More</a>
+                </div>
+                <!-- Account Overview -->
+                <div class="overview-section">
+                    <h3>Account Summary</h3>
+                    <div class="account-overview">
+                        <div class="profile-pic"></div>
+                        <h4>Zach Schultz</h4>
+                        <p>Email: zach.schultz@concinnity.vision</p>
+                        <p>Role: Administrator</p>
+                    </div>
+                    <a href="account.html" class="view-more">View More</a>
+                </div>
+            </div>
         </div>
         <div class="nav-bar">
+            <a href="dashboard.html" class="nav-item">🏠<br>Dashboard</a>
             <a href="team.html" class="nav-item">👥<br>Team</a>
             <a href="sales.html" class="nav-item">🤝<br>Sales</a>
             <a href="messages.html" class="nav-item">💬<br>Messages</a>
@@ -32,13 +147,23 @@
         </div>
     </div>
     <script>
-        // Set the company name dynamically from the URL parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const companyName = urlParams.get('companyName') || 'Company Name Here';
+        // Retrieve company name from localStorage
+        const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
         document.getElementById('companyName').textContent = companyName;
 
-        // Store company name in localStorage for use on other pages
-        localStorage.setItem('companyName', companyName);
+        // Toggle notifications dropdown
+        const notifications = document.querySelector('.notifications');
+        const dropdown = document.querySelector('.notifications-dropdown');
+        notifications.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notifications.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>

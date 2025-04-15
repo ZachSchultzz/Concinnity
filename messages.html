@@ -12,6 +12,24 @@
             <div class="notifications">
                 Notifications (10)
                 <span class="dropdown-arrow">▼</span>
+                <div class="notifications-dropdown">
+                    <div class="notification-item">
+                        <p>New message from Alice Johnson</p>
+                        <span class="notification-time">10 minutes ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>Team meeting scheduled for 2:00 PM</p>
+                        <span class="notification-time">1 hour ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>File uploaded: Sales_Report.xlsx</p>
+                        <span class="notification-time">3 hours ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>Project deadline approaching</p>
+                        <span class="notification-time">Yesterday</span>
+                    </div>
+                </div>
             </div>
             <div class="company-name" id="companyName">Concinnity.Vision</div>
             <div class="search-bar">
@@ -23,18 +41,28 @@
             <h2>Messages</h2>
             <div class="chat-container">
                 <div class="chat-sidebar">
-                    <h3>Team Members</h3>
+                    <h3>Chats</h3>
                     <ul>
-                        <li class="chat-user">Zach Schultz</li>
                         <li class="chat-user">Alice Johnson</li>
                         <li class="chat-user">Bob Carter</li>
+                        <li class="chat-user">Clara Davis</li>
+                        <li class="chat-user">David Evans</li>
                     </ul>
                 </div>
                 <div class="chat-window">
                     <div id="chatMessages">
-                        <div class="message sent">Zach Schultz: Hey, how’s the project going?</div>
-                        <div class="message received">Alice Johnson: It’s going well! I’ll send an update soon.</div>
-                        <div class="message sent">Zach Schultz: Great, thanks!</div>
+                        <div class="message received">
+                            <p>Hey, can you review the project proposal?</p>
+                            <span class="message-time">10:00 AM</span>
+                        </div>
+                        <div class="message sent">
+                            <p>Sure, I’ll take a look and get back to you by noon.</p>
+                            <span class="message-time">10:05 AM</span>
+                        </div>
+                        <div class="message received">
+                            <p>Thanks! Let me know if you need any clarifications.</p>
+                            <span class="message-time">10:10 AM</span>
+                        </div>
                     </div>
                     <div class="chat-input">
                         <input type="text" placeholder="Type a message..." />
@@ -44,6 +72,7 @@
             </div>
         </div>
         <div class="nav-bar">
+            <a href="dashboard.html" class="nav-item">🏠<br>Dashboard</a>
             <a href="team.html" class="nav-item">👥<br>Team</a>
             <a href="sales.html" class="nav-item">🤝<br>Sales</a>
             <a href="messages.html" class="nav-item">💬<br>Messages</a>
@@ -56,6 +85,20 @@
         // Retrieve company name from localStorage
         const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
         document.getElementById('companyName').textContent = companyName;
+
+        // Toggle notifications dropdown
+        const notifications = document.querySelector('.notifications');
+        const dropdown = document.querySelector('.notifications-dropdown');
+        notifications.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notifications.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
