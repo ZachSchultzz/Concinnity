@@ -248,7 +248,7 @@ button:hover {
     border-radius: 15px;
     position: absolute;
     bottom: 20px;
-    width: 70%; /* Slightly wider to accommodate extra tab */
+    width: 60%; /* Adjusted for fewer tabs */
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -333,17 +333,6 @@ button:hover {
 .team-overview .team-card:hover {
     transform: none;
     box-shadow: none;
-}
-
-/* Sales Overview */
-.sales-overview {
-    display: flex;
-    justify-content: space-around;
-}
-
-.sales-overview .stat-card {
-    width: 45%;
-    padding: 0.5rem;
 }
 
 /* Messages Overview */
@@ -434,69 +423,6 @@ button:hover {
 
 .status.offline {
     color: rgba(255, 255, 255, 0.5);
-}
-
-/* Sales Tab Styles */
-.sales-container {
-    width: 80%;
-    max-width: 800px;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02));
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.sales-stats {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 1rem;
-}
-
-.stat-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
-    padding: 1rem;
-    text-align: center;
-    width: 30%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 2px 10px rgba(0, 247, 209, 0.3);
-}
-
-.stat-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.stat-card p {
-    font-size: 1.5rem;
-    color: #00f7d1;
-}
-
-.sales-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.sale-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
-    padding: 0.5rem;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.sale-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.01);
-}
-
-.sale-item p {
-    margin: 0.2rem 0;
-    font-size: 0.9rem;
 }
 
 /* Chat Styles (for Messages Tab) */
