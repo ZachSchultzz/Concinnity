@@ -25,7 +25,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         password === testAccount.password &&
         pin === testAccount.pin
     ) {
-        alert('Login successful! Welcome, Zach Schultz.');
+        window.location.href = 'dashboard.html';
     } else {
         alert('Invalid credentials. Please try again.');
     }
