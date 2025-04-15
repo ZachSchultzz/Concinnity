@@ -23,8 +23,8 @@
             <div class="calendar-sidebar">
                 <button class="add-event-btn">+ Create Event</button>
                 <div class="view-toggle">
-                    <button class="view-btn active" data-view="month">Month</button>
-                    <button class="view-btn" data-view="week">Week</button>
+                    <button class="view-btn" data-view="month">Month</button>
+                    <button class="view-btn active" data-view="week">Week</button>
                     <button class="view-btn" data-view="day">Day</button>
                 </div>
                 <div class="mini-calendar">
@@ -43,7 +43,7 @@
                 <div class="calendar-header">
                     <h2>April 2025</h2>
                 </div>
-                <div id="monthView" class="calendar-view">
+                <div id="monthView" class="calendar-view" style="display: none;">
                     <div class="calendar-grid">
                         <div>Sunday</div><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div>
                         <div class="empty-day"></div><div class="empty-day"></div>
@@ -58,16 +58,44 @@
                         <div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="empty-day"></div><div class="empty-day"></div><div class="empty-day"></div>
                     </div>
                 </div>
-                <div id="weekView" class="calendar-view" style="display: none;">
+                <div id="weekView" class="calendar-view">
                     <div class="calendar-week-grid">
+                        <!-- Header row -->
                         <div class="time-slot"></div>
-                        <div>Sun 13</div><div>Mon 14</div><div>Tue 15</div><div>Wed 16</div><div>Thu 17</div><div>Fri 18</div><div>Sat 19</div>
+                        <div>Sun 13</div><div>Mon 14</div><div>Tue 15</div><div class="today-column">Wed 16</div><div>Thu 17</div><div>Fri 18</div><div>Sat 19</div>
+                        <!-- Time slots with empty cells for each day -->
+                        <div class="time-slot">12:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">1:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">2:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">3:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">4:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">5:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">6:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">7:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">8:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                         <div class="time-slot">9:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">10:00 AM</div><div></div><div></div><div></div>
-                        <div class="week-event" style="grid-row: 2 / 3; grid-column: 5;">Team Meeting (10:00 AM - 11:00 AM)</div>
-                        <div></div><div></div><div></div><div></div>
+                        <div class="time-slot">10:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                         <div class="time-slot">11:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
                         <div class="time-slot">12:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">1:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">2:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">3:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">4:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">5:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">6:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">7:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">8:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">9:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">10:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">11:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <!-- Event placed outside the grid flow -->
+                        <div class="week-event" data-row="11" data-column="5">Team Meeting (10:00 AM - 11:00 AM)</div>
+                    </div>
+                    <div class="today-schedule">
+                        <h3>Today's Schedule (Wed 16)</h3>
+                        <div class="schedule-item">
+                            <p>Team Meeting, 10:00 AM - 11:00 AM, with Alice Johnson, Bob Carter</p>
+                        </div>
                     </div>
                 </div>
                 <div id="dayView" class="calendar-view" style="display: none;">
@@ -115,6 +143,24 @@
                 views[view].style.display = 'block';
                 button.classList.add('active');
             });
+        });
+
+        // Position events in the Week view
+        document.querySelectorAll('.week-event').forEach(event => {
+            const row = parseInt(event.getAttribute('data-row'));
+            const column = parseInt(event.getAttribute('data-column'));
+            const grid = document.querySelector('.calendar-week-grid');
+            const cell = grid.children[(row - 1) * 8 + column]; // Calculate the target cell
+
+            if (cell) {
+                const rect = cell.getBoundingClientRect();
+                const gridRect = grid.getBoundingClientRect();
+                event.style.position = 'absolute';
+                event.style.top = `${rect.top - gridRect.top}px`;
+                event.style.left = `${rect.left - gridRect.left}px`;
+                event.style.width = `${rect.width}px`;
+                event.style.height = `${rect.height}px`;
+            }
         });
     </script>
 </body>

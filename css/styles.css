@@ -255,6 +255,8 @@ button:hover {
 .status.offline {
     color: rgba(255, 255, 255, 0.5);
 }
+
+/* Chat Styles (for Messages Tab) */
 .chat-container {
     display: flex;
     width: 80%;
@@ -347,6 +349,7 @@ button:hover {
 .chat-input button:hover {
     background: #00d1b2;
 }
+
 /* Calendar Container */
 .calendar-container {
     display: flex;
@@ -482,6 +485,9 @@ button:hover {
 .calendar-grid div:nth-child(7) {
     background: rgba(255, 255, 255, 0.1);
     font-weight: bold;
+    padding: 0.125rem; /* Reduced from 0.5rem to 0.125rem to shrink height by ~3/4th */
+    line-height: 1; /* Reduce line height to minimize space */
+    min-height: auto; /* Override min-height for header row */
 }
 
 .empty-day {
@@ -511,18 +517,23 @@ button:hover {
     grid-template-columns: 100px repeat(7, 1fr);
     gap: 2px;
     text-align: center;
+    height: 600px; /* Set a fixed height to enable scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    position: relative; /* For absolute positioning of events */
 }
 
 .calendar-week-grid div {
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
+    min-height: 50px; /* Ensure each time slot has a minimum height */
 }
 
 .calendar-week-grid .time-slot {
     background: transparent;
     text-align: right;
     padding-right: 0.5rem;
+    min-height: 50px; /* Match the min-height of other cells */
 }
 
 .calendar-week-grid div:nth-child(8n + 1) {
@@ -539,6 +550,15 @@ button:hover {
 .calendar-week-grid div:nth-child(8n + 9) {
     background: rgba(255, 255, 255, 0.1);
     font-weight: bold;
+    min-height: auto; /* Header row doesn't need min-height */
+}
+
+.today-column {
+    background: rgba(0, 247, 209, 0.1) !important; /* Highlight today’s column header */
+}
+
+.today-column ~ div:nth-child(8n + 5) {
+    background: rgba(0, 247, 209, 0.1) !important; /* Highlight all cells in today’s column */
 }
 
 .week-event {
@@ -548,6 +568,33 @@ button:hover {
     padding: 0.2rem;
     font-size: 0.8rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Today’s Schedule Section */
+.today-schedule {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.today-schedule h3 {
+    margin-bottom: 0.5rem;
+}
+
+.schedule-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.schedule-item p {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 /* Day View */
