@@ -9,7 +9,11 @@
 <body>
     <div class="dashboard-container">
         <div class="top-bar">
-            <div class="date">Today's Date<br>04/15/2025</div>
+            <div class="notifications">
+                Notifications (10)
+                <span class="dropdown-arrow">▼</span>
+            </div>
+            <div class="company-name" id="companyName">Concinnity.Vision</div>
             <div class="search-bar">
                 <input type="text" placeholder="Search" />
                 <span class="search-icon">🔍</span>
@@ -28,5 +32,10 @@
             <a href="account.html" class="nav-item">👤<br>Account</a>
         </div>
     </div>
+    <script>
+        // Retrieve company name from localStorage
+        const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
+        document.getElementById('companyName').textContent = companyName;
+    </script>
 </body>
 </html>

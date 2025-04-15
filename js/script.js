@@ -25,7 +25,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         password === testAccount.password &&
         pin === testAccount.pin
     ) {
-        window.location.href = 'dashboard.html';
+        // Redirect to dashboard with company name as a URL parameter
+        window.location.href = `dashboard.html?companyName=${encodeURIComponent(businessName)}`;
     } else {
         alert('Invalid credentials. Please try again.');
     }
