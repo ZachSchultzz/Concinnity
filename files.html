@@ -12,6 +12,24 @@
             <div class="notifications">
                 Notifications (10)
                 <span class="dropdown-arrow">▼</span>
+                <div class="notifications-dropdown">
+                    <div class="notification-item">
+                        <p>New message from Alice Johnson</p>
+                        <span class="notification-time">10 minutes ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>Team meeting scheduled for 2:00 PM</p>
+                        <span class="notification-time">1 hour ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>File uploaded: Sales_Report.xlsx</p>
+                        <span class="notification-time">3 hours ago</span>
+                    </div>
+                    <div class="notification-item">
+                        <p>Project deadline approaching</p>
+                        <span class="notification-time">Yesterday</span>
+                    </div>
+                </div>
             </div>
             <div class="company-name" id="companyName">Concinnity.Vision</div>
             <div class="search-bar">
@@ -68,6 +86,20 @@
         // Retrieve company name from localStorage
         const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
         document.getElementById('companyName').textContent = companyName;
+
+        // Toggle notifications dropdown
+        const notifications = document.querySelector('.notifications');
+        const dropdown = document.querySelector('.notifications-dropdown');
+        notifications.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notifications.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
