@@ -814,3 +814,71 @@ button:hover {
     white-space: nowrap;
     z-index: 10;
 }
+
+/* Files Tab Styles */
+.files-container {
+    width: 80%;
+    max-width: 800px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02)); /* Subtle gradient */
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.upload-btn {
+    background: #00f7d1;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.upload-btn:hover {
+    background: #00d1b2;
+    transform: scale(1.02);
+}
+
+.file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 0.5rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.file-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.01);
+}
+
+.file-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.file-details {
+    flex: 1;
+}
+
+.file-name {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+}
+
+.file-meta {
+    margin: 0;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
