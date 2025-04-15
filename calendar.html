@@ -19,22 +19,65 @@
                 <span class="search-icon">🔍</span>
             </div>
         </div>
-        <div class="main-content">
-            <h2>Calendar</h2>
-            <button id="addEventBtn" class="add-event-btn">Add Event</button>
-            <div id="eventList" class="event-list">
-                <!-- Static mockup events -->
-                <div class="event">
-                    <h3>Team Meeting</h3>
-                    <p>Date: 2025-04-20 at 10:00</p>
-                    <p>Created by: Zach Schultz</p>
-                    <p>Attendees: Zach Schultz, Alice Johnson, Bob Carter</p>
+        <div class="calendar-container">
+            <div class="calendar-sidebar">
+                <button class="add-event-btn">+ Create Event</button>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="month">Month</button>
+                    <button class="view-btn" data-view="week">Week</button>
+                    <button class="view-btn" data-view="day">Day</button>
                 </div>
-                <div class="event">
-                    <h3>Project Deadline</h3>
-                    <p>Date: 2025-04-25 at 17:00</p>
-                    <p>Created by: Alice Johnson</p>
-                    <p>Attendees: Alice Johnson, Bob Carter</p>
+                <div class="mini-calendar">
+                    <h3>April 2025</h3>
+                    <div class="mini-calendar-grid">
+                        <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
+                        <div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+                        <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
+                        <div>13</div><div>14</div><div>15</div><div class="today">16</div><div>17</div><div>18</div><div>19</div>
+                        <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
+                        <div>27</div><div>28</div><div>29</div><div>30</div><div></div><div></div><div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar-main">
+                <div class="calendar-header">
+                    <h2>April 2025</h2>
+                </div>
+                <div id="monthView" class="calendar-view">
+                    <div class="calendar-grid">
+                        <div>Sunday</div><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div>
+                        <div class="empty-day"></div><div class="empty-day"></div>
+                        <div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div>
+                        <div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div>
+                        <div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day today">16
+                            <div class="event">Team Meeting @ 10:00 AM</div>
+                        </div><div class="day">17</div><div class="day">18</div><div class="day">19</div>
+                        <div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23
+                            <div class="event">Project Deadline @ 5:00 PM</div>
+                        </div><div class="day">24</div><div class="day">25</div><div class="day">26</div>
+                        <div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="empty-day"></div><div class="empty-day"></div><div class="empty-day"></div>
+                    </div>
+                </div>
+                <div id="weekView" class="calendar-view" style="display: none;">
+                    <div class="calendar-week-grid">
+                        <div class="time-slot"></div>
+                        <div>Sun 13</div><div>Mon 14</div><div>Tue 15</div><div>Wed 16</div><div>Thu 17</div><div>Fri 18</div><div>Sat 19</div>
+                        <div class="time-slot">9:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">10:00 AM</div><div></div><div></div><div></div>
+                        <div class="week-event" style="grid-row: 2 / 3; grid-column: 5;">Team Meeting (10:00 AM - 11:00 AM)</div>
+                        <div></div><div></div><div></div><div></div>
+                        <div class="time-slot">11:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        <div class="time-slot">12:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                    </div>
+                </div>
+                <div id="dayView" class="calendar-view" style="display: none;">
+                    <div class="calendar-day-grid">
+                        <div class="time-slot">9:00 AM</div><div></div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="day-event">Team Meeting (10:00 AM - 11:00 AM)</div>
+                        <div class="time-slot">11:00 AM</div><div></div>
+                        <div class="time-slot">12:00 PM</div><div></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,9 +95,26 @@
         const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
         document.getElementById('companyName').textContent = companyName;
 
-        // Placeholder for Add Event button (no backend yet)
-        document.getElementById('addEventBtn').addEventListener('click', () => {
-            alert('Event creation will be available once the backend is implemented.');
+        // Toggle calendar views
+        const viewButtons = document.querySelectorAll('.view-btn');
+        const views = {
+            month: document.getElementById('monthView'),
+            week: document.getElementById('weekView'),
+            day: document.getElementById('dayView')
+        };
+
+        viewButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const view = button.getAttribute('data-view');
+                
+                // Hide all views and remove active class
+                Object.values(views).forEach(v => v.style.display = 'none');
+                viewButtons.forEach(btn => btn.classList.remove('active'));
+
+                // Show selected view and add active class
+                views[view].style.display = 'block';
+                button.classList.add('active');
+            });
         });
     </script>
 </body>

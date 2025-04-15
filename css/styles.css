@@ -347,3 +347,232 @@ button:hover {
 .chat-input button:hover {
     background: #00d1b2;
 }
+/* Calendar Container */
+.calendar-container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 150px); /* Adjust for top bar and nav bar */
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+/* Calendar Sidebar */
+.calendar-sidebar {
+    width: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-left: 1rem;
+}
+
+.add-event-btn {
+    background: #00f7d1;
+    color: #1a1a1a;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.add-event-btn:hover {
+    background: #00d1b2;
+}
+
+.view-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.view-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.view-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.view-btn.active {
+    background: #00f7d1;
+    color: #1a1a1a;
+}
+
+.mini-calendar {
+    margin-top: 1rem;
+}
+
+.mini-calendar h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.mini-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.mini-calendar-grid div {
+    padding: 0.3rem;
+}
+
+.mini-calendar-grid div:not(:empty) {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.today {
+    background: #00f7d1 !important;
+    color: #1a1a1a !important;
+}
+
+/* Calendar Main Area */
+.calendar-main {
+    flex: 1;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.calendar-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Month View */
+.calendar-view {
+    width: 100%;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+}
+
+.calendar-grid div {
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    min-height: 100px;
+    position: relative;
+}
+
+.calendar-grid div:first-child,
+.calendar-grid div:nth-child(2),
+.calendar-grid div:nth-child(3),
+.calendar-grid div:nth-child(4),
+.calendar-grid div:nth-child(5),
+.calendar-grid div:nth-child(6),
+.calendar-grid div:nth-child(7) {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+}
+
+.empty-day {
+    background: transparent !important;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event {
+    background: #00f7d1;
+    color: #1a1a1a;
+    border-radius: 5px;
+    padding: 0.2rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    width: 90%;
+    text-align: center;
+}
+
+/* Week View */
+.calendar-week-grid {
+    display: grid;
+    grid-template-columns: 100px repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+}
+
+.calendar-week-grid div {
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.calendar-week-grid .time-slot {
+    background: transparent;
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+.calendar-week-grid div:nth-child(8n + 1) {
+    background: transparent;
+}
+
+.calendar-week-grid div:nth-child(8n + 2),
+.calendar-week-grid div:nth-child(8n + 3),
+.calendar-week-grid div:nth-child(8n + 4),
+.calendar-week-grid div:nth-child(8n + 5),
+.calendar-week-grid div:nth-child(8n + 6),
+.calendar-week-grid div:nth-child(8n + 7),
+.calendar-week-grid div:nth-child(8n + 8),
+.calendar-week-grid div:nth-child(8n + 9) {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: bold;
+}
+
+.week-event {
+    background: #00f7d1;
+    color: #1a1a1a;
+    border-radius: 5px;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* Day View */
+.calendar-day-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 2px;
+}
+
+.calendar-day-grid div {
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.calendar-day-grid .time-slot {
+    background: transparent;
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+.day-event {
+    background: #00f7d1;
+    color: #1a1a1a;
+    border-radius: 5px;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+}
