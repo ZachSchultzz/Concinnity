@@ -24,4 +24,18 @@
             <p>This is a placeholder for the Messages tab.</p>
         </div>
         <div class="nav-bar">
-            <a href="team.html" class="nav-item">👥<br>Tea
+            <a href="team.html" class="nav-item">👥<br>Team</a>
+            <a href="sales.html" class="nav-item">🤝<br>Sales</a>
+            <a href="messages.html" class="nav-item">💬<br>Messages</a>
+            <a href="calendar.html" class="nav-item">📅<br>Calendar</a>
+            <a href="files.html" class="nav-item">📁<br>Files</a>
+            <a href="account.html" class="nav-item">👤<br>Account</a>
+        </div>
+    </div>
+    <script>
+        // Retrieve company name from localStorage
+        const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
+        document.getElementById('companyName').textContent = companyName;
+    </script>
+</body>
+</html>
