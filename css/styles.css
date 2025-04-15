@@ -68,6 +68,7 @@ button {
     font-weight: bold;
     cursor: pointer;
     margin-top: 1rem;
+    transition: background 0.3s ease; /* Smooth transition for hover */
 }
 
 button:hover {
@@ -101,6 +102,9 @@ button:hover {
     position: absolute;
     top: 0;
     width: 100%;
+    background: rgba(255, 255, 255, 0.05); /* Subtle background for top bar */
+    backdrop-filter: blur(5px); /* Blur effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
 }
 
 .notifications {
@@ -108,6 +112,13 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 0.3rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.notifications:hover {
+    background: rgba(255, 255, 255, 0.1); /* Hover effect for notifications */
 }
 
 .dropdown-arrow {
@@ -119,6 +130,7 @@ button:hover {
     font-weight: bold;
     flex-grow: 1;
     text-align: center;
+    text-shadow: 0 0 5px rgba(0, 247, 209, 0.3); /* Subtle glow effect */
 }
 
 .search-bar {
@@ -135,11 +147,18 @@ button:hover {
     color: white;
     font-size: 1rem;
     text-align: center; /* Center the placeholder text */
+    transition: background 0.3s ease;
 }
 
 .search-bar input::placeholder {
     text-align: center; /* Center the placeholder text */
     color: rgba(255, 255, 255, 0.7);
+}
+
+.search-bar input:hover,
+.search-bar input:focus {
+    background: rgba(255, 255, 255, 0.2); /* Hover/focus effect */
+    outline: none;
 }
 
 .search-bar .search-icon {
@@ -185,6 +204,7 @@ button:hover {
     width: 60%;
     left: 50%;
     transform: translateX(-50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
 .nav-item {
@@ -197,11 +217,12 @@ button:hover {
     color: white;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: background 0.3s;
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 .nav-item:hover {
     background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05); /* Slight scale-up on hover */
 }
 
 /* Updated styles for the Team tab */
@@ -218,11 +239,12 @@ button:hover {
     border-radius: 10px;
     padding: 1rem;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
 }
 
 .team-card h3 {
@@ -283,6 +305,7 @@ button:hover {
     padding: 0.5rem;
     cursor: pointer;
     border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
 .chat-user:hover {
@@ -308,6 +331,7 @@ button:hover {
     margin-bottom: 0.5rem;
     padding: 0.5rem;
     border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
 .message.sent {
@@ -335,6 +359,13 @@ button:hover {
     border-radius: 5px;
     color: white;
     margin-right: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.chat-input input:hover,
+.chat-input input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
 }
 
 .chat-input button {
@@ -344,10 +375,12 @@ button:hover {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .chat-input button:hover {
     background: #00d1b2;
+    transform: scale(1.05);
 }
 
 /* Calendar Container */
@@ -366,6 +399,7 @@ button:hover {
     border-radius: 10px;
     padding: 1rem;
     margin-left: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
 .add-event-btn {
@@ -377,10 +411,12 @@ button:hover {
     cursor: pointer;
     width: 100%;
     margin-bottom: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .add-event-btn:hover {
     background: #00d1b2;
+    transform: scale(1.02);
 }
 
 .view-toggle {
@@ -397,11 +433,12 @@ button:hover {
     border-radius: 5px;
     color: white;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .view-btn:hover {
     background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
 }
 
 .view-btn.active {
@@ -428,11 +465,16 @@ button:hover {
 
 .mini-calendar-grid div {
     padding: 0.3rem;
+    transition: background 0.3s ease;
 }
 
 .mini-calendar-grid div:not(:empty) {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
+}
+
+.mini-calendar-grid div:not(:empty):hover {
+    background: rgba(255, 255, 255, 0.1); /* Hover effect for mini calendar days */
 }
 
 .today {
@@ -449,6 +491,7 @@ button:hover {
     border-radius: 10px;
     padding: 1rem;
     overflow-y: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
 .calendar-header {
@@ -474,6 +517,11 @@ button:hover {
     border-radius: 5px;
     min-height: 100px;
     position: relative;
+    transition: background 0.3s ease;
+}
+
+.calendar-grid div:hover {
+    background: rgba(255, 255, 255, 0.1); /* Hover effect for month view days */
 }
 
 .calendar-grid div:first-child,
@@ -509,6 +557,12 @@ button:hover {
     font-size: 0.8rem;
     width: 90%;
     text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.event:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
 }
 
 /* Week View */
@@ -526,14 +580,25 @@ button:hover {
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
-    min-height: 50px; /* Ensure each time slot has a minimum height */
+    min-height: 60px; /* Hour block height */
+    display: flex; /* For centering content */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center (for day cells) */
+    transition: background 0.3s ease;
+}
+
+.calendar-week-grid div:hover:not(.time-slot):not(:nth-child(8n + 1)):not(:nth-child(8n + 2)):not(:nth-child(8n + 3)):not(:nth-child(8n + 4)):not(:nth-child(8n + 5)):not(:nth-child(8n + 6)):not(:nth-child(8n + 7)):not(:nth-child(8n + 8)):not(:nth-child(8n + 9)) {
+    background: rgba(255, 255, 255, 0.1); /* Hover effect for day cells */
 }
 
 .calendar-week-grid .time-slot {
     background: transparent;
-    text-align: right;
-    padding-right: 0.5rem;
-    min-height: 50px; /* Match the min-height of other cells */
+    text-align: center; /* Center time labels horizontally */
+    padding: 0.5rem;
+    min-height: 60px; /* Match the hour block height */
+    display: flex; /* For centering content */
+    align-items: center; /* Vertically center */
+    justify-content: flex-end; /* Align time labels to the right, but with flex for centering */
 }
 
 .calendar-week-grid div:nth-child(8n + 1) {
@@ -550,7 +615,12 @@ button:hover {
 .calendar-week-grid div:nth-child(8n + 9) {
     background: rgba(255, 255, 255, 0.1);
     font-weight: bold;
-    min-height: auto; /* Header row doesn't need min-height */
+    min-height: 25px; /* Reduced by half (from 50px to 25px) */
+    padding: 0.25rem; /* Reduced padding to fit smaller height */
+    line-height: 1; /* Minimize extra space */
+    display: flex; /* For centering content */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
 }
 
 .today-column {
@@ -571,6 +641,12 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.week-event:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
 }
 
 /* Today’s Schedule Section */
@@ -579,6 +655,7 @@ button:hover {
     padding: 1rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
 .today-schedule h3 {
@@ -590,6 +667,11 @@ button:hover {
     border-radius: 5px;
     padding: 0.5rem;
     margin-bottom: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.schedule-item:hover {
+    background: rgba(255, 255, 255, 0.1); /* Hover effect */
 }
 
 .schedule-item p {
@@ -608,12 +690,24 @@ button:hover {
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
+    min-height: 60px; /* Ensure consistency with Week view */
+    display: flex; /* For centering content */
+    align-items: center; /* Vertically center */
+    justify-content: center; /* Horizontally center */
+    transition: background 0.3s ease;
+}
+
+.calendar-day-grid div:hover:not(.time-slot) {
+    background: rgba(255, 255, 255, 0.1); /* Hover effect for day cells */
 }
 
 .calendar-day-grid .time-slot {
     background: transparent;
-    text-align: right;
+    text-align: center; /* Center time labels */
     padding-right: 0.5rem;
+    display: flex; /* For centering content */
+    align-items: center; /* Vertically center */
+    justify-content: flex-end; /* Align to right, but with flex for centering */
 }
 
 .day-event {
@@ -622,4 +716,10 @@ button:hover {
     border-radius: 5px;
     padding: 0.2rem;
     font-size: 0.8rem;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.day-event:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 5px rgba(0, 247, 209, 0.3); /* Glow effect on hover */
 }
