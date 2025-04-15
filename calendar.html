@@ -20,8 +20,23 @@
             </div>
         </div>
         <div class="main-content">
-            <h2>Calendar Page</h2>
-            <p>This is a placeholder for the Calendar tab.</p>
+            <h2>Calendar</h2>
+            <button id="addEventBtn" class="add-event-btn">Add Event</button>
+            <div id="eventList" class="event-list">
+                <!-- Static mockup events -->
+                <div class="event">
+                    <h3>Team Meeting</h3>
+                    <p>Date: 2025-04-20 at 10:00</p>
+                    <p>Created by: Zach Schultz</p>
+                    <p>Attendees: Zach Schultz, Alice Johnson, Bob Carter</p>
+                </div>
+                <div class="event">
+                    <h3>Project Deadline</h3>
+                    <p>Date: 2025-04-25 at 17:00</p>
+                    <p>Created by: Alice Johnson</p>
+                    <p>Attendees: Alice Johnson, Bob Carter</p>
+                </div>
+            </div>
         </div>
         <div class="nav-bar">
             <a href="team.html" class="nav-item">👥<br>Team</a>
@@ -36,6 +51,11 @@
         // Retrieve company name from localStorage
         const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
         document.getElementById('companyName').textContent = companyName;
+
+        // Placeholder for Add Event button (no backend yet)
+        document.getElementById('addEventBtn').addEventListener('click', () => {
+            alert('Event creation will be available once the backend is implemented.');
+        });
     </script>
 </body>
 </html>

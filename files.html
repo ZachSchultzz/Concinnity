@@ -20,8 +20,20 @@
             </div>
         </div>
         <div class="main-content">
-            <h2>Files Page</h2>
-            <p>This is a placeholder for the Files tab.</p>
+            <h2>Files</h2>
+            <input type="file" id="fileUpload" />
+            <button id="uploadBtn">Upload File</button>
+            <div id="fileList" class="file-list">
+                <!-- Static mockup files -->
+                <div class="file">
+                    <p>ProjectPlan.pdf (Uploaded by Zach Schultz on 2025-04-15)</p>
+                    <a href="#" onclick="alert('File downloading will be available once the backend is implemented.')">Download</a>
+                </div>
+                <div class="file">
+                    <p>DesignMockup.png (Uploaded by Bob Carter on 2025-04-14)</p>
+                    <a href="#" onclick="alert('File downloading will be available once the backend is implemented.')">Download</a>
+                </div>
+            </div>
         </div>
         <div class="nav-bar">
             <a href="team.html" class="nav-item">👥<br>Team</a>
@@ -36,6 +48,11 @@
         // Retrieve company name from localStorage
         const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
         document.getElementById('companyName').textContent = companyName;
+
+        // Placeholder for Upload button (no backend yet)
+        document.getElementById('uploadBtn').addEventListener('click', () => {
+            alert('File uploading will be available once the backend is implemented.');
+        });
     </script>
 </body>
 </html>

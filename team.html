@@ -23,16 +23,31 @@
             <h2>Team Members</h2>
             <div class="team-list">
                 <div class="team-card">
+                    <div class="profile-pic"></div>
                     <h3>Zach Schultz</h3>
                     <p>CEO</p>
+                    <p>Email: zach@concinnity.vision</p>
+                    <p class="status online">Online</p>
+                    <button class="message-btn" data-user="Zach Schultz">Message</button>
+                    <button class="connect-btn" data-user="Zach Schultz">Connect</button>
                 </div>
                 <div class="team-card">
+                    <div class="profile-pic"></div>
                     <h3>Alice Johnson</h3>
                     <p>Developer</p>
+                    <p>Email: alice@concinnity.vision</p>
+                    <p class="status offline">Offline</p>
+                    <button class="message-btn" data-user="Alice Johnson">Message</button>
+                    <button class="connect-btn" data-user="Alice Johnson">Connect</button>
                 </div>
                 <div class="team-card">
+                    <div class="profile-pic"></div>
                     <h3>Bob Carter</h3>
                     <p>Designer</p>
+                    <p>Email: bob@concinnity.vision</p>
+                    <p class="status online">Online</p>
+                    <button class="message-btn" data-user="Bob Carter">Message</button>
+                    <button class="connect-btn" data-user="Bob Carter">Connect</button>
                 </div>
             </div>
         </div>
@@ -46,4 +61,26 @@
         </div>
     </div>
     <script>
-        // Retrieve company name from loca
+        // Retrieve company name from localStorage
+        const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
+        document.getElementById('companyName').textContent = companyName;
+
+        // Placeholder functionality for Message button
+        document.querySelectorAll('.message-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const user = btn.getAttribute('data-user');
+                localStorage.setItem('chatUser', user);
+                window.location.href = 'messages.html';
+            });
+        });
+
+        // Placeholder functionality for Connect button
+        document.querySelectorAll('.connect-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const user = btn.getAttribute('data-user');
+                alert(`Connection message sent to ${user}! (Feature coming soon)`);
+            });
+        });
+    </script>
+</body>
+</html>
