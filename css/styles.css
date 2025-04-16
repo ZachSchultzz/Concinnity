@@ -93,15 +93,18 @@ button:hover {
     position: relative;
     width: 100%;
     opacity: 0; /* Start hidden for fade-in animation */
-    animation: fadeIn 0.5s ease-in forwards; /* Apply fade-in animation on page load */
+    filter: blur(2px); /* Start with a slight blur */
+    animation: fadeIn 0.8s ease-in-out forwards; /* Updated fade-in animation */
 }
 
 @keyframes fadeIn {
     from {
-        opacity: 0;
+        opacity: 20;
+        filter: blur(.50px); /* Start blurred */
     }
     to {
         opacity: 1;
+        filter: blur(0px); /* End clear */
     }
 }
 

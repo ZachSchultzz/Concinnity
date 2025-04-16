@@ -36,27 +36,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+// Check if we're on a dashboard page by looking for the nav-bar
+const navBar = document.querySelector('.nav-bar');
+if (navBar) {
+    // Select all navigation links
+    const navLinks = document.querySelectorAll('.nav-item');
 
-    // Check if we're on a dashboard page by looking for the nav-bar
-    const navBar = document.querySelector('.nav-bar');
-    if (navBar) {
-        // Select all navigation links
-        const navLinks = document.querySelectorAll('.nav-item');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent immediate navigation
+            const href = link.getAttribute('href');
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault(); // Prevent immediate navigation
-                const href = link.getAttribute('href');
+            // Apply fade-out animation to the entire dashboard container
+            const dashboardContainer = document.querySelector('.dashboard-container');
+            dashboardContainer.style.animation = 'fadeOut 0.8s ease-in-out forwards';
 
-                // Apply fade-out animation to the entire dashboard container
-                const dashboardContainer = document.querySelector('.dashboard-container');
-                dashboardContainer.style.animation = 'fadeOut 0.5s ease-out forwards';
-
-                // Navigate to the new page after the animation completes
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500); // Match the animation duration
-            });
+            // Navigate to the new page after the animation completes
+            setTimeout(() => {
+                window.location.href = href;
+            }, 400); // Updated to match the new animation duration (0.8s = 800ms)
         });
-    }
-});
+    });
+}
