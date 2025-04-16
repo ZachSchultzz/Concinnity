@@ -3,97 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team - Concinnity</title>
+    <title>Team - Concinnity.Vision</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="dashboard-container">
         <div class="top-bar">
             <div class="notifications">
-                Notifications (10)
-                <span class="dropdown-arrow">▼</span>
+                Notifications (10) <span class="dropdown-arrow">▼</span>
                 <div class="notifications-dropdown">
                     <div class="notification-item">
                         <p>New message from Alice Johnson</p>
-                        <span class="notification-time">10 minutes ago</span>
+                        <span class="notification-time">2 mins ago</span>
                     </div>
                     <div class="notification-item">
-                        <p>Team meeting scheduled for 2:00 PM</p>
-                        <span class="notification-time">1 hour ago</span>
-                    </div>
-                    <div class="notification-item">
-                        <p>File uploaded: Sales_Report.xlsx</p>
-                        <span class="notification-time">3 hours ago</span>
-                    </div>
-                    <div class="notification-item">
-                        <p>Project deadline approaching</p>
-                        <span class="notification-time">Yesterday</span>
+                        <p>Task assigned by Bob Carter</p>
+                        <span class="notification-time">15 mins ago</span>
                     </div>
                 </div>
             </div>
-            <div class="company-name" id="companyName">Concinnity.Vision</div>
+            <div class="company-name">Concinnity.Vision</div>
             <div class="search-bar">
-                <input type="text" placeholder="Search" />
+                <input type="text" placeholder="Search">
                 <span class="search-icon">🔍</span>
             </div>
         </div>
         <div class="main-content">
             <h2>Team</h2>
-            <div class="team-list">
-                <div class="team-card">
-                    <div class="profile-pic"></div>
-                    <h3>Alice Johnson</h3>
-                    <p>Project Manager</p>
-                    <p class="status online">Online</p>
-                </div>
-                <div class="team-card">
-                    <div class="profile-pic"></div>
-                    <h3>Bob Carter</h3>
-                    <p>Developer</p>
-                    <p class="status offline">Offline</p>
-                </div>
-                <div class="team-card">
-                    <div class="profile-pic"></div>
-                    <h3>Clara Davis</h3>
-                    <p>Designer</p>
-                    <p class="status online">Online</p>
-                </div>
-                <div class="team-card">
-                    <div class="profile-pic"></div>
-                    <h3>David Evans</h3>
-                    <p>Sales Lead</p>
-                    <p class="status offline">Offline</p>
+            <div class="team-container">
+                <input type="text" class="team-search" placeholder="Search team members">
+                <div class="org-chart">
+                    <!-- Root Node: Project Manager -->
+                    <div class="org-node">
+                        <div class="team-card">
+                            <div class="profile-pic"></div>
+                            <h3>Alice Johnson</h3>
+                            <p>Project Manager</p>
+                            <p class="status online">Online</p>
+                        </div>
+                        <!-- Child Nodes: Developer and Designer -->
+                        <div class="org-branch">
+                            <div class="org-node">
+                                <div class="team-card">
+                                    <div class="profile-pic"></div>
+                                    <h3>Bob Carter</h3>
+                                    <p>Developer</p>
+                                    <p class="status offline">Offline</p>
+                                </div>
+                            </div>
+                            <div class="org-node">
+                                <div class="team-card">
+                                    <div class="profile-pic"></div>
+                                    <h3>Clara Davis</h3>
+                                    <p>Designer</p>
+                                    <p class="status online">Online</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="nav-bar">
-            <a href="dashboard.html" class="nav-item">🏠<br>Dashboard</a>
-            <a href="team.html" class="nav-item">👥<br>Team</a>
-            <a href="messages.html" class="nav-item">💬<br>Messages</a>
-            <a href="calendar.html" class="nav-item">📅<br>Calendar</a>
-            <a href="files.html" class="nav-item">📁<br>Files</a>
-            <a href="time-clock.html" class="nav-item">⏰<br>Time Clock</a>
-            <a href="account.html" class="nav-item">👤<br>Account</a>
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="team.html" class="nav-item">Team</a>
+            <a href="messages.html" class="nav-item">Messages</a>
+            <a href="calendar.html" class="nav-item">Calendar</a>
+            <a href="files.html" class="nav-item">Files</a>
+            <a href="time_clock.html" class="nav-item">Time Clock</a>
+            <a href="tasks.html" class="nav-item">Tasks</a>
+            <a href="account.html" class="nav-item">Account</a>
         </div>
     </div>
-    <script>
-        // Retrieve company name from localStorage
-        const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
-        document.getElementById('companyName').textContent = companyName;
-
-        // Toggle notifications dropdown
-        const notifications = document.querySelector('.notifications');
-        const dropdown = document.querySelector('.notifications-dropdown');
-        notifications.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!notifications.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
-        });
-    </script>
 </body>
 </html>
