@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team - Concinnity.Vision</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -22,7 +23,6 @@
                     </div>
                 </div>
             </div>
-            <div class="company-name">Concinnity.Vision</div>
             <div class="search-bar">
                 <input type="text" placeholder="Search">
                 <span class="search-icon">🔍</span>
@@ -31,32 +31,41 @@
         <div class="main-content">
             <h2>Team</h2>
             <div class="team-container">
-                <input type="text" class="team-search" placeholder="Search team members">
+                <input type="text" class="team-search" placeholder="Search team members...">
+                <div class="team-card">
+                    <div class="profile-pic"></div>
+                    <h3>Alice Johnson</h3>
+                    <p>Project Manager</p>
+                    <p>alice.johnson@concinnity.vision</p>
+                    <p class="status online">Online</p>
+                </div>
+                <div class="team-card">
+                    <div class="profile-pic"></div>
+                    <h3>Bob Carter</h3>
+                    <p>Developer</p>
+                    <p>bob.carter@concinnity.vision</p>
+                    <p class="status offline">Offline</p>
+                </div>
                 <div class="org-chart">
-                    <!-- Root Node: Project Manager -->
                     <div class="org-node">
                         <div class="team-card">
                             <div class="profile-pic"></div>
-                            <h3>Alice Johnson</h3>
-                            <p>Project Manager</p>
-                            <p class="status online">Online</p>
+                            <h3>CEO</h3>
+                            <p>Zach Schultz</p>
                         </div>
-                        <!-- Child Nodes: Developer and Designer -->
                         <div class="org-branch">
                             <div class="org-node">
                                 <div class="team-card">
                                     <div class="profile-pic"></div>
-                                    <h3>Bob Carter</h3>
-                                    <p>Developer</p>
-                                    <p class="status offline">Offline</p>
+                                    <h3>Manager</h3>
+                                    <p>Alice Johnson</p>
                                 </div>
                             </div>
                             <div class="org-node">
                                 <div class="team-card">
                                     <div class="profile-pic"></div>
-                                    <h3>Clara Davis</h3>
-                                    <p>Designer</p>
-                                    <p class="status online">Online</p>
+                                    <h3>Developer</h3>
+                                    <p>Bob Carter</p>
                                 </div>
                             </div>
                         </div>
@@ -64,6 +73,7 @@
                 </div>
             </div>
         </div>
+        <div class="nav-bar-hover-area"></div>
         <div class="nav-bar">
             <a href="dashboard.html" class="nav-item">Dashboard</a>
             <a href="team.html" class="nav-item">Team</a>

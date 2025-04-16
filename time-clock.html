@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Clock - Concinnity.Vision</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -22,7 +23,6 @@
                     </div>
                 </div>
             </div>
-            <div class="company-name">Concinnity.Vision</div>
             <div class="search-bar">
                 <input type="text" placeholder="Search">
                 <span class="search-icon">🔍</span>
@@ -33,9 +33,10 @@
             <div class="time-clock-container">
                 <div class="clock-status-section">
                     <div class="clock-status">
-                        <h3>Current Status: <span>Clocked Out</span></h3>
-                        <p>Last Clock In: April 14, 2025, 9:00 AM</p>
-                        <p>Last Clock Out: April 14, 2025, 5:00 PM</p>
+                        <h3>Clock Status: <span>Not Clocked In</span></h3>
+                        <p>Current Time: April 15, 2025, 6:38 PM</p>
+                        <p>Last Clock-In: April 15, 2025, 9:00 AM</p>
+                        <p>Last Clock-Out: April 15, 2025, 5:00 PM</p>
                     </div>
                     <button class="clock-btn">Clock In</button>
                 </div>
@@ -46,46 +47,37 @@
                 <div class="view-toggle">
                     <label for="timeView">View:</label>
                     <select id="timeView">
-                        <option value="personal">Personal</option>
-                        <option value="team">Team (Manager)</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="daily">Daily</option>
                     </select>
                 </div>
                 <div class="weekly-summary">
                     <h3>Weekly Summary</h3>
                     <div class="summary-grid">
-                        <div class="summary-item"><span>Mon:</span> 8 hrs</div>
-                        <div class="summary-item"><span>Tue:</span> 7.5 hrs</div>
-                        <div class="summary-item"><span>Wed:</span> 8 hrs</div>
-                        <div class="summary-item"><span>Thu:</span> 8 hrs</div>
-                        <div class="summary-item"><span>Fri:</span> 6 hrs</div>
-                        <div class="summary-item total"><span>Total:</span> 37.5 hrs</div>
+                        <div class="summary-item"><span>Mon</span> 8h</div>
+                        <div class="summary-item"><span>Tue</span> 7h</div>
+                        <div class="summary-item"><span>Wed</span> 8h</div>
+                        <div class="summary-item"><span>Thu</span> 6h</div>
+                        <div class="summary-item"><span>Fri</span> 7h</div>
+                        <div class="summary-item total"><span>Total</span> 36h</div>
                     </div>
                 </div>
                 <div class="time-log">
                     <h3>Time Log</h3>
                     <div class="log-grid">
-                        <div class="log-header">
-                            <span>Date</span>
-                            <span>Clock In</span>
-                            <span>Clock Out</span>
-                            <span>Actions</span>
-                        </div>
-                        <div class="log-item">
-                            <span>April 14, 2025</span>
-                            <span>9:00 AM</span>
-                            <span>5:00 PM</span>
-                            <button class="edit-punch-btn">Edit</button>
-                        </div>
-                        <div class="log-item">
-                            <span>April 13, 2025</span>
-                            <span>8:30 AM</span>
-                            <span>4:30 PM</span>
-                            <button class="edit-punch-btn">Edit</button>
-                        </div>
+                        <div class="log-header"><span>Date</span></div>
+                        <div class="log-header"><span>Clock In</span></div>
+                        <div class="log-header"><span>Clock Out</span></div>
+                        <div class="log-header"><span>Actions</span></div>
+                        <div class="log-item"><span>April 15, 2025</span></div>
+                        <div class="log-item"><span>9:00 AM</span></div>
+                        <div class="log-item"><span>5:00 PM</span></div>
+                        <div class="log-item"><button class="edit-punch-btn">Edit</button></div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="nav-bar-hover-area"></div>
         <div class="nav-bar">
             <a href="dashboard.html" class="nav-item">Dashboard</a>
             <a href="team.html" class="nav-item">Team</a>

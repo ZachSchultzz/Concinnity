@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar - Concinnity.Vision</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -22,89 +23,127 @@
                     </div>
                 </div>
             </div>
-            <div class="company-name">Concinnity.Vision</div>
             <div class="search-bar">
                 <input type="text" placeholder="Search">
                 <span class="search-icon">🔍</span>
             </div>
         </div>
-        <div class="calendar-container">
-            <div class="calendar-sidebar">
-                <button class="add-event-btn">Add Event</button>
-                <div class="view-toggle">
-                    <button class="view-btn active">Month</button>
-                    <button class="view-btn">Week</button>
-                    <button class="view-btn">Day</button>
-                </div>
-                <div class="mini-calendar">
-                    <h3>April 2025</h3>
-                    <div class="mini-calendar-grid">
-                        <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
-                        <div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
-                        <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
-                        <div>13</div><div>14</div><div class="today">15</div><div>16</div><div>17</div><div>18</div><div>19</div>
-                        <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
-                        <div>27</div><div>28</div><div>29</div><div>30</div><div></div><div></div><div></div>
+        <div class="main-content">
+            <h2>Calendar</h2>
+            <div class="calendar-container">
+                <div class="calendar-sidebar">
+                    <button class="add-event-btn">Add Event</button>
+                    <div class="view-toggle">
+                        <button class="view-btn active">Month</button>
+                        <button class="view-btn">Week</button>
+                        <button class="view-btn">Day</button>
+                    </div>
+                    <div class="mini-calendar">
+                        <h3>April 2025</h3>
+                        <div class="mini-calendar-grid">
+                            <div>S</div>
+                            <div>M</div>
+                            <div>T</div>
+                            <div>W</div>
+                            <div>T</div>
+                            <div>F</div>
+                            <div>S</div>
+                            <div></div>
+                            <div></div>
+                            <div>1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                            <div>5</div>
+                            <div>6</div>
+                            <div>7</div>
+                            <div>8</div>
+                            <div>9</div>
+                            <div>10</div>
+                            <div>11</div>
+                            <div>12</div>
+                            <div>13</div>
+                            <div>14</div>
+                            <div class="today">15</div>
+                            <div>16</div>
+                            <div>17</div>
+                            <div>18</div>
+                            <div>19</div>
+                            <div>20</div>
+                            <div>21</div>
+                            <div>22</div>
+                            <div>23</div>
+                            <div>24</div>
+                            <div>25</div>
+                            <div>26</div>
+                            <div>27</div>
+                            <div>28</div>
+                            <div>29</div>
+                            <div>30</div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="calendar-main">
-                <div class="calendar-header">
-                    <h2>April 2025</h2>
-                </div>
-                <div class="calendar-view">
-                    <div class="calendar-grid">
-                        <div>Sunday</div><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div>
-                        <div class="empty-day"></div>
-                        <div class="empty-day"></div>
-                        <div class="day">1</div>
-                        <div class="day">2</div>
-                        <div class="day">3</div>
-                        <div class="day">4</div>
-                        <div class="day">5</div>
-                        <div class="day">6</div>
-                        <div class="day">7</div>
-                        <div class="day">8</div>
-                        <div class="day">9</div>
-                        <div class="day">10</div>
-                        <div class="day">11</div>
-                        <div class="day">12</div>
-                        <div class="day">13</div>
-                        <div class="day">14</div>
-                        <div class="day today">15
-                            <div class="event meeting" data-tooltip="Team Meeting with Alice Johnson">Team Meeting</div>
-                        </div>
-                        <div class="day">16</div>
-                        <div class="day">17</div>
-                        <div class="day">18</div>
-                        <div class="day">19</div>
-                        <div class="day">20</div>
-                        <div class="day">21</div>
-                        <div class="day">22</div>
-                        <div class="day">23
-                            <div class="event deadline" data-tooltip="Project Deadline">Project Deadline</div>
-                        </div>
-                        <div class="day">24</div>
-                        <div class="day">25</div>
-                        <div class="day">26</div>
-                        <div class="day">27</div>
-                        <div class="day">28</div>
-                        <div class="day">29</div>
-                        <div class="day">30</div>
-                        <div class="empty-day"></div>
-                        <div class="empty-day"></div>
-                        <div class="empty-day"></div>
-                        <div class="empty-day"></div>
+                <div class="calendar-main">
+                    <div class="calendar-header">
+                        <h3>April 2025</h3>
                     </div>
-                </div>
-                <div class="today-schedule">
-                    <h3>Today's Schedule</h3>
-                    <div class="schedule-item">
-                        <p>Team Meeting, 10:00 AM - 11:00 AM, with Alice Johnson</p>
+                    <div class="calendar-view">
+                        <div class="calendar-grid">
+                            <div>Sun</div>
+                            <div>Mon</div>
+                            <div>Tue</div>
+                            <div>Wed</div>
+                            <div>Thu</div>
+                            <div>Fri</div>
+                            <div>Sat</div>
+                            <div class="empty-day"></div>
+                            <div class="empty-day"></div>
+                            <div class="day">1</div>
+                            <div class="day">2</div>
+                            <div class="day">3</div>
+                            <div class="day">4</div>
+                            <div class="day">5</div>
+                            <div class="day">6</div>
+                            <div class="day">7</div>
+                            <div class="day">8</div>
+                            <div class="day">9</div>
+                            <div class="day">10</div>
+                            <div class="day">11</div>
+                            <div class="day">12</div>
+                            <div class="day">13</div>
+                            <div class="day">14</div>
+                            <div class="day today">15
+                                <div class="event meeting" data-tooltip="Team Meeting with Alice Johnson">Team Meeting</div>
+                            </div>
+                            <div class="day">16</div>
+                            <div class="day">17</div>
+                            <div class="day">18</div>
+                            <div class="day">19</div>
+                            <div class="day">20</div>
+                            <div class="day">21</div>
+                            <div class="day">22</div>
+                            <div class="day">23
+                                <div class="event deadline" data-tooltip="Project Deadline: Website Redesign">Deadline</div>
+                            </div>
+                            <div class="day">24</div>
+                            <div class="day">25</div>
+                            <div class="day">26</div>
+                            <div class="day">27</div>
+                            <div class="day">28</div>
+                            <div class="day">29</div>
+                            <div class="day">30</div>
+                            <div class="empty-day"></div>
+                            <div class="empty-day"></div>
+                            <div class="empty-day"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="nav-bar-hover-area"></div>
         <div class="nav-bar">
             <a href="dashboard.html" class="nav-item">Dashboard</a>
             <a href="team.html" class="nav-item">Team</a>
