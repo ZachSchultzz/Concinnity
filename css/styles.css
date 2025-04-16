@@ -102,9 +102,9 @@ button:hover {
     position: absolute;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: none;
 }
 
 .notifications {
@@ -170,14 +170,6 @@ button:hover {
     font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.7);
     margin-top: 0.2rem;
-}
-
-.company-name {
-    font-size: 2rem;
-    font-weight: bold;
-    flex-grow: 1;
-    text-align: center;
-    text-shadow: 0 0 5px rgba(0, 247, 209, 0.3);
 }
 
 .search-bar {
@@ -793,16 +785,33 @@ button:hover {
     margin: 0.2rem 0;
 }
 
-.projects-section,
-.tasks-section,
-.saved-files-section,
-.recent-activity-section,
-.settings-section {
+.work-flow-container {
     width: 100%;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
     padding: 1rem;
     margin-bottom: 1rem;
+}
+
+.work-flow-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #00f7d1;
+}
+
+.work-flow-sections {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.work-flow-sections .projects-section,
+.work-flow-sections .tasks-section {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 0;
 }
 
 .projects-section h3,
@@ -861,6 +870,16 @@ button:hover {
     color: rgba(255, 255, 255, 0.7);
     margin-top: 0.2rem;
     display: block;
+}
+
+.saved-files-section,
+.recent-activity-section,
+.settings-section {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .settings-section {
@@ -1511,17 +1530,15 @@ button:hover {
 .time-clock-container .clock-status p {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
-    margin: 0.3rem 0;
+    margin: 0.2rem 0;
 }
 
 .time-clock-container .clock-btn {
     background: #00f7d1;
     color: #1a1a1a;
     border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
     transition: background 0.3s ease, transform 0.2s ease;
@@ -1533,16 +1550,14 @@ button:hover {
 }
 
 .time-clock-container .missed-punch-alert {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 107, 107, 0.2);
-    border: 1px solid #ff6b6b;
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 1rem 0;
-    color: #ff6b6b;
-    gap: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.time-clock-container .missed-punch-alert p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
 }
 
 .time-clock-container .log-missed-btn {
@@ -1552,19 +1567,20 @@ button:hover {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .time-clock-container .log-missed-btn:hover {
     background: #e55a5a;
+    transform: scale(1.05);
 }
 
 .time-clock-container .view-toggle {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 0.5rem;
-    margin: 1.5rem 0;
+    margin-bottom: 2rem;
 }
 
 .time-clock-container .view-toggle label {
@@ -1574,40 +1590,48 @@ button:hover {
 
 .time-clock-container .view-toggle select {
     background: rgba(255, 255, 255, 0.1);
-    color: white;
     border: none;
     padding: 0.5rem;
     border-radius: 5px;
-    cursor: pointer;
+    color: white;
     font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.time-clock-container .view-toggle select:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .time-clock-container .weekly-summary {
-    background: rgba(255, 255, 255, 0.07);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border: 1px solid rgba(0, 247, 209, 0.1);
+    margin-bottom: 2rem;
 }
 
 .time-clock-container .weekly-summary h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
     color: #00f7d1;
 }
 
 .time-clock-container .summary-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 1rem;
 }
 
 .time-clock-container .summary-item {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
-    padding: 0.5rem;
     text-align: center;
-    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+}
+
+.time-clock-container .summary-item:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .time-clock-container .summary-item span {
@@ -1616,17 +1640,12 @@ button:hover {
 }
 
 .time-clock-container .summary-item.total {
-    background: rgba(0, 247, 209, 0.1);
-    font-weight: bold;
-}
-
-.time-clock-container .time-log {
-    margin: 2rem 0;
+    background: rgba(0, 247, 209, 0.2);
 }
 
 .time-clock-container .time-log h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
     color: #00f7d1;
 }
 
@@ -1635,87 +1654,51 @@ button:hover {
     grid-template-columns: 1fr 1fr 1fr 100px;
     gap: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 0.5rem;
 }
 
 .time-clock-container .log-header {
-    display: contents;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 5px;
 }
 
-.time-clock-container .log-header span {
-    font-weight: bold;
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
+.time-clock-container .log-header span,
+.time-clock-container .log-item span {
+    display: block;
     text-align: center;
 }
 
 .time-clock-container .log-item {
-    display: contents;
-}
-
-.time-clock-container .log-item span {
-    padding: 0.5rem;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.time-clock-container .log-item button {
-    margin: 0.5rem;
-}
-
-.time-clock-container .manager-time-log {
-    margin: 2rem 0;
-}
-
-.time-clock-container .manager-time-log h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #00f7d1;
-}
-
-.time-clock-container .team-log-grid {
-    display: grid;
-    grid-template-columns: 150px 1fr 1fr 100px;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    padding: 0.5rem;
-}
-
-.time-clock-container .team-log-header {
-    display: contents;
-}
-
-.time-clock-container .team-log-header span {
-    font-weight: bold;
-    padding: 0.5rem;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    text-align: center;
-}
-
-.time-clock-container .team-log-item {
-    display: contents;
-}
-
-.time-clock-container .team-log-item span {
     padding: 0.5rem;
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 100px;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.time-clock-container .log-item:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .time-clock-container .edit-punch-btn {
     background: #00f7d1;
     color: #1a1a1a;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.8rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin: 0 auto;
+    display: block;
 }
 
 .time-clock-container .edit-punch-btn:hover {
     background: #00d1b2;
+    transform: scale(1.05);
 }
