@@ -3,224 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Clock - Concinnity</title>
+    <title>Time Clock - Concinnity.Vision</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="dashboard-container">
         <div class="top-bar">
             <div class="notifications">
-                Notifications (10)
-                <span class="dropdown-arrow">▼</span>
+                Notifications (10) <span class="dropdown-arrow">▼</span>
                 <div class="notifications-dropdown">
                     <div class="notification-item">
                         <p>New message from Alice Johnson</p>
-                        <span class="notification-time">10 minutes ago</span>
+                        <span class="notification-time">2 mins ago</span>
                     </div>
                     <div class="notification-item">
-                        <p>Team meeting scheduled for 2:00 PM</p>
-                        <span class="notification-time">1 hour ago</span>
-                    </div>
-                    <div class="notification-item">
-                        <p>File uploaded: Sales_Report.xlsx</p>
-                        <span class="notification-time">3 hours ago</span>
-                    </div>
-                    <div class="notification-item">
-                        <p>Project deadline approaching</p>
-                        <span class="notification-time">Yesterday</span>
+                        <p>Task assigned by Bob Carter</p>
+                        <span class="notification-time">15 mins ago</span>
                     </div>
                 </div>
             </div>
-            <div class="company-name" id="companyName">Concinnity.Vision</div>
+            <div class="company-name">Concinnity.Vision</div>
             <div class="search-bar">
-                <input type="text" placeholder="Search" />
+                <input type="text" placeholder="Search">
                 <span class="search-icon">🔍</span>
             </div>
         </div>
         <div class="main-content">
             <h2>Time Clock</h2>
             <div class="time-clock-container">
-                <div class="clock-status">
-                    <h3>Current Status: <span id="clockStatus">Not Clocked In</span></h3>
-                    <p>Last Action: <span id="lastAction">N/A</span></p>
-                    <p>Today's Schedule: <span id="todaySchedule">9:00 AM - 5:00 PM</span></p>
+                <div class="clock-status-section">
+                    <div class="clock-status">
+                        <h3>Current Status: <span>Clocked Out</span></h3>
+                        <p>Last Clock In: April 14, 2025, 9:00 AM</p>
+                        <p>Last Clock Out: April 14, 2025, 5:00 PM</p>
+                    </div>
+                    <button class="clock-btn">Clock In</button>
                 </div>
-                <button id="clockButton" class="clock-btn">Clock In</button>
-                <div class="missed-punch-alert" id="missedPunchAlert" style="display: none;">
-                    <p>⚠️ You may have missed a punch. Please review your time entries.</p>
+                <div class="missed-punch-alert">
+                    <p>Missed a punch? Log it here.</p>
                     <button class="log-missed-btn">Log Missed Punch</button>
                 </div>
                 <div class="view-toggle">
-                    <label for="viewMode">View Mode: </label>
-                    <select id="viewMode">
-                        <option value="employee">Employee View</option>
-                        <option value="manager">Manager View</option>
+                    <label for="timeView">View:</label>
+                    <select id="timeView">
+                        <option value="personal">Personal</option>
+                        <option value="team">Team (Manager)</option>
                     </select>
                 </div>
-                <div class="weekly-summary" id="weeklySummary">
-                    <h3>Weekly Time Summary</h3>
-                    <div class="summary-details">
-                        <p>Monday: 8 hours</p>
-                        <p>Tuesday: 7.5 hours</p>
-                        <p>Wednesday: 8 hours</p>
-                        <p>Thursday: 8 hours</p>
-                        <p>Friday: 6 hours</p>
-                        <p>Total: 37.5 hours</p>
+                <div class="weekly-summary">
+                    <h3>Weekly Summary</h3>
+                    <div class="summary-grid">
+                        <div class="summary-item"><span>Mon:</span> 8 hrs</div>
+                        <div class="summary-item"><span>Tue:</span> 7.5 hrs</div>
+                        <div class="summary-item"><span>Wed:</span> 8 hrs</div>
+                        <div class="summary-item"><span>Thu:</span> 8 hrs</div>
+                        <div class="summary-item"><span>Fri:</span> 6 hrs</div>
+                        <div class="summary-item total"><span>Total:</span> 37.5 hrs</div>
                     </div>
                 </div>
-                <div class="time-log" id="employeeTimeLog">
-                    <h3>Recent Time Logs</h3>
-                    <div class="log-list" id="timeLogs">
+                <div class="time-log">
+                    <h3>Time Log</h3>
+                    <div class="log-grid">
+                        <div class="log-header">
+                            <span>Date</span>
+                            <span>Clock In</span>
+                            <span>Clock Out</span>
+                            <span>Actions</span>
+                        </div>
                         <div class="log-item">
-                            <p>Clocked In: April 15, 2025, 9:00 AM</p>
-                            <p>Clocked Out: April 15, 2025, 5:00 PM</p>
-                            <p>Total Hours: 8</p>
+                            <span>April 14, 2025</span>
+                            <span>9:00 AM</span>
+                            <span>5:00 PM</span>
                             <button class="edit-punch-btn">Edit</button>
                         </div>
                         <div class="log-item">
-                            <p>Clocked In: April 14, 2025, 8:30 AM</p>
-                            <p>Clocked Out: April 14, 2025, 4:30 PM</p>
-                            <p>Total Hours: 8</p>
+                            <span>April 13, 2025</span>
+                            <span>8:30 AM</span>
+                            <span>4:30 PM</span>
                             <button class="edit-punch-btn">Edit</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="manager-time-log" id="managerTimeLog" style="display: none;">
-                    <h3>Team Time Logs</h3>
-                    <div class="team-log-list">
-                        <div class="team-log-item">
-                            <h4>Alice Johnson</h4>
-                            <p>Clocked In: April 15, 2025, 9:00 AM</p>
-                            <p>Clocked Out: April 15, 2025, 5:00 PM</p>
-                            <p>Total Hours: 8</p>
-                        </div>
-                        <div class="team-log-item">
-                            <h4>Bob Carter</h4>
-                            <p>Clocked In: April 15, 2025, 8:30 AM</p>
-                            <p>Clocked Out: April 15, 2025, 4:30 PM</p>
-                            <p>Total Hours: 8</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="nav-bar">
-            <a href="dashboard.html" class="nav-item">🏠<br>Dashboard</a>
-            <a href="team.html" class="nav-item">👥<br>Team</a>
-            <a href="messages.html" class="nav-item">💬<br>Messages</a>
-            <a href="calendar.html" class="nav-item">📅<br>Calendar</a>
-            <a href="files.html" class="nav-item">📁<br>Files</a>
-            <a href="time-clock.html" class="nav-item">⏰<br>Time Clock</a>
-            <a href="tasks.html" class="nav-item">✅<br>Tasks</a>
-            <a href="account.html" class="nav-item">👤<br>Account</a>
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="team.html" class="nav-item">Team</a>
+            <a href="messages.html" class="nav-item">Messages</a>
+            <a href="calendar.html" class="nav-item">Calendar</a>
+            <a href="files.html" class="nav-item">Files</a>
+            <a href="time_clock.html" class="nav-item">Time Clock</a>
+            <a href="tasks.html" class="nav-item">Tasks</a>
+            <a href="me.html" class="nav-item">Me</a>
         </div>
     </div>
-    <script>
-        // Retrieve company name from localStorage
-        const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
-        document.getElementById('companyName').textContent = companyName;
-
-        // Toggle notifications dropdown
-        const notifications = document.querySelector('.notifications');
-        const dropdown = document.querySelector('.notifications-dropdown');
-        notifications.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!notifications.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
-        });
-
-        // Time clock functionality with Workday-inspired features
-        const clockButton = document.getElementById('clockButton');
-        const clockStatus = document.getElementById('clockStatus');
-        const lastAction = document.getElementById('lastAction');
-        const missedPunchAlert = document.getElementById('missedPunchAlert');
-        const viewMode = document.getElementById('viewMode');
-        const employeeTimeLog = document.getElementById('employeeTimeLog');
-        const managerTimeLog = document.getElementById('managerTimeLog');
-        let isClockedIn = false;
-
-        // Mock schedule data
-        const schedule = {
-            start: "9:00 AM",
-            end: "5:00 PM"
-        };
-        document.getElementById('todaySchedule').textContent = `${schedule.start} - ${schedule.end}`;
-
-        // Clock in/out with automatic timestamp
-        clockButton.addEventListener('click', () => {
-            const now = new Date().toLocaleString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric', 
-                hour: 'numeric', 
-                minute: 'numeric', 
-                hour12: true 
-            });
-            if (!isClockedIn) {
-                clockStatus.textContent = 'Clocked In';
-                lastAction.textContent = `Clocked In at ${now}`;
-                clockButton.textContent = 'Clock Out';
-                clockButton.style.background = '#ff6b6b';
-                isClockedIn = true;
-
-                // Mock missed punch alert (Workday-inspired validation)
-                setTimeout(() => {
-                    missedPunchAlert.style.display = 'block';
-                }, 2000);
-            } else {
-                clockStatus.textContent = 'Not Clocked In';
-                lastAction.textContent = `Clocked Out at ${now}`;
-                clockButton.textContent = 'Clock In';
-                clockButton.style.background = '#00f7d1';
-                isClockedIn = false;
-
-                // Add mock log entry with automatic timestamp
-                const logList = document.getElementById('timeLogs');
-                const logItem = document.createElement('div');
-                logItem.className = 'log-item';
-                logItem.innerHTML = `
-                    <p>Clocked In: April 15, 2025, 9:00 AM</p>
-                    <p>Clocked Out: ${now}</p>
-                    <p>Total Hours: 8</p>
-                    <button class="edit-punch-btn">Edit</button>
-                `;
-                logList.prepend(logItem);
-
-                // Hide missed punch alert after clocking out
-                missedPunchAlert.style.display = 'none';
-            }
-        });
-
-        // Toggle between Employee and Manager views (Workday-inspired manager oversight)
-        viewMode.addEventListener('change', () => {
-            if (viewMode.value === 'manager') {
-                employeeTimeLog.style.display = 'none';
-                weeklySummary.style.display = 'none';
-                managerTimeLog.style.display = 'block';
-            } else {
-                employeeTimeLog.style.display = 'block';
-                weeklySummary.style.display = 'block';
-                managerTimeLog.style.display = 'none';
-            }
-        });
-
-        // Mock edit punch functionality (Workday-inspired self-service)
-        document.querySelectorAll('.edit-punch-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                alert('Edit Punch: This feature will allow you to modify your time entry (backend implementation pending).');
-            });
-        });
-
-        // Mock log missed punch functionality
-        document.querySelector('.log-missed-btn').addEventListener('click', () => {
-            alert('Log Missed Punch: Submit your missed punch time and date for approval (backend implementation pending).');
-            missedPunchAlert.style.display = 'none';
-        });
-    </script>
 </body>
 </html>

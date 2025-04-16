@@ -3,44 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Concinnity</title>
+    <title>Dashboard - Concinnity.Vision</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="dashboard-container">
         <div class="top-bar">
             <div class="notifications">
-                Notifications (10)
-                <span class="dropdown-arrow">▼</span>
+                Notifications (10) <span class="dropdown-arrow">▼</span>
                 <div class="notifications-dropdown">
                     <div class="notification-item">
                         <p>New message from Alice Johnson</p>
-                        <span class="notification-time">10 minutes ago</span>
+                        <span class="notification-time">2 mins ago</span>
                     </div>
                     <div class="notification-item">
-                        <p>Team meeting scheduled for 2:00 PM</p>
-                        <span class="notification-time">1 hour ago</span>
-                    </div>
-                    <div class="notification-item">
-                        <p>File uploaded: Sales_Report.xlsx</p>
-                        <span class="notification-time">3 hours ago</span>
-                    </div>
-                    <div class="notification-item">
-                        <p>Project deadline approaching</p>
-                        <span class="notification-time">Yesterday</span>
+                        <p>Task assigned by Bob Carter</p>
+                        <span class="notification-time">15 mins ago</span>
                     </div>
                 </div>
             </div>
-            <div class="company-name" id="companyName">Concinnity.Vision</div>
+            <div class="company-name">Concinnity.Vision</div>
             <div class="search-bar">
-                <input type="text" placeholder="Search" />
+                <input type="text" placeholder="Search">
                 <span class="search-icon">🔍</span>
             </div>
         </div>
         <div class="main-content">
             <h2>Dashboard</h2>
             <div class="dashboard-overview">
-                <!-- Team Overview -->
                 <div class="overview-section">
                     <h3>Team Overview</h3>
                     <div class="team-overview">
@@ -59,24 +49,22 @@
                     </div>
                     <a href="team.html" class="view-more">View More</a>
                 </div>
-                <!-- Messages Overview -->
                 <div class="overview-section">
-                    <h3>Recent Messages</h3>
+                    <h3>Messages</h3>
                     <div class="messages-overview">
-                        <div class="message received">
-                            <p>Alice Johnson: Can you review the project proposal?</p>
-                            <span class="message-time">10:00 AM</span>
+                        <div class="message">
+                            <p>Alice Johnson: Let's schedule a meeting for the project timeline.</p>
+                            <span class="message-time">10:30 AM</span>
                         </div>
                         <div class="message sent">
-                            <p>You: Sure, I’ll get back to you by noon.</p>
-                            <span class="message-time">10:05 AM</span>
+                            <p>You: Sure, how about tomorrow at 2 PM?</p>
+                            <span class="message-time">10:32 AM</span>
                         </div>
                     </div>
                     <a href="messages.html" class="view-more">View More</a>
                 </div>
-                <!-- Calendar Overview -->
                 <div class="overview-section">
-                    <h3>Upcoming Events</h3>
+                    <h3>Calendar</h3>
                     <div class="calendar-overview">
                         <div class="schedule-item">
                             <p>Team Meeting, 10:00 AM - 11:00 AM, with Alice Johnson</p>
@@ -87,123 +75,18 @@
                     </div>
                     <a href="calendar.html" class="view-more">View More</a>
                 </div>
-                <!-- Files Overview -->
-                <div class="overview-section">
-                    <h3>Recent Files</h3>
-                    <div class="files-overview">
-                        <div class="file-item">
-                            <div class="file-icon">📄</div>
-                            <div class="file-details">
-                                <p class="file-name">Project_Proposal.pdf</p>
-                                <p class="file-meta">PDF • 1.2 MB</p>
-                            </div>
-                        </div>
-                        <div class="file-item">
-                            <div class="file-icon">📸</div>
-                            <div class="file-details">
-                                <p class="file-name">Team_Photo.jpg</p>
-                                <p class="file-meta">JPG • 3.5 MB</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="files.html" class="view-more">View More</a>
-                </div>
-                <!-- Account Overview -->
-                <div class="overview-section">
-                    <h3>Account Summary</h3>
-                    <div class="account-overview">
-                        <div class="profile-pic"></div>
-                        <h4>Zach Schultz</h4>
-                        <p>Email: zach.schultz@concinnity.vision</p>
-                        <p>Role: Administrator</p>
-                    </div>
-                    <a href="account.html" class="view-more">View More</a>
-                </div>
-                <!-- Time Clock Overview -->
-                <div class="overview-section">
-                    <h3>Recent Time Logs</h3>
-                    <div class="time-log-overview">
-                        <div class="log-item">
-                            <p>Clocked In: April 15, 2025, 9:00 AM</p>
-                            <p>Clocked Out: April 15, 2025, 5:00 PM</p>
-                        </div>
-                        <div class="log-item">
-                            <p>Clocked In: April 14, 2025, 8:30 AM</p>
-                            <p>Clocked Out: April 14, 2025, 4:30 PM</p>
-                        </div>
-                    </div>
-                    <a href="time-clock.html" class="view-more">View More</a>
-                </div>
-                <!-- Tasks Overview -->
-                <div class="overview-section">
-                    <h3>Pending Tasks</h3>
-                    <div class="tasks-overview">
-                        <div class="task-item">
-                            <p>Review Project Proposal - Due: April 20, 2025</p>
-                        </div>
-                        <div class="task-item completed">
-                            <p>Update Team Calendar - Due: April 15, 2025</p>
-                        </div>
-                    </div>
-                    <a href="tasks.html" class="view-more">View More</a>
-                </div>
-                <!-- Announcements -->
-                <div class="overview-section">
-                    <h3>Announcements</h3>
-                    <div class="announcements-list">
-                        <div class="announcement-item">
-                            <h4>Office Closure</h4>
-                            <p>The office will be closed on April 18, 2025, for a national holiday.</p>
-                            <p>Posted: April 10, 2025</p>
-                        </div>
-                        <div class="announcement-item">
-                            <h4>New Policy Update</h4>
-                            <p>Updated remote work policy effective May 1, 2025.</p>
-                            <p>Posted: April 5, 2025</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Quick Access -->
-                <div class="overview-section">
-                    <h3>Quick Access</h3>
-                    <div class="quick-access-list">
-                        <a href="#" class="quick-access-item">Company Handbook</a>
-                        <a href="#" class="quick-access-item">HR Portal</a>
-                        <a href="files.html" class="quick-access-item">Shared Documents</a>
-                        <a href="time-clock.html" class="quick-access-item">Time Clock</a>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="nav-bar">
-            <a href="dashboard.html" class="nav-item">🏠<br>Dashboard</a>
-            <a href="team.html" class="nav-item">👥<br>Team</a>
-            <a href="messages.html" class="nav-item">💬<br>Messages</a>
-            <a href="calendar.html" class="nav-item">📅<br>Calendar</a>
-            <a href="files.html" class="nav-item">📁<br>Files</a>
-            <a href="time-clock.html" class="nav-item">⏰<br>Time Clock</a>
-            <a href="tasks.html" class="nav-item">✅<br>Tasks</a>
-            <a href="account.html" class="nav-item">👤<br>Account</a>
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="team.html" class="nav-item">Team</a>
+            <a href="messages.html" class="nav-item">Messages</a>
+            <a href="calendar.html" class="nav-item">Calendar</a>
+            <a href="files.html" class="nav-item">Files</a>
+            <a href="time_clock.html" class="nav-item">Time Clock</a>
+            <a href="tasks.html" class="nav-item">Tasks</a>
+            <a href="me.html" class="nav-item">Me</a>
         </div>
     </div>
-    <script>
-        // Retrieve company name from localStorage
-        const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
-        document.getElementById('companyName').textContent = companyName;
-
-        // Toggle notifications dropdown
-        const notifications = document.querySelector('.notifications');
-        const dropdown = document.querySelector('.notifications-dropdown');
-        notifications.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!notifications.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
-        });
-    </script>
 </body>
 </html>

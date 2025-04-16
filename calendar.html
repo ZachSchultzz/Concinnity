@@ -3,47 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar - Concinnity</title>
+    <title>Calendar - Concinnity.Vision</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="dashboard-container">
         <div class="top-bar">
             <div class="notifications">
-                Notifications (10)
-                <span class="dropdown-arrow">▼</span>
+                Notifications (10) <span class="dropdown-arrow">▼</span>
                 <div class="notifications-dropdown">
                     <div class="notification-item">
                         <p>New message from Alice Johnson</p>
-                        <span class="notification-time">10 minutes ago</span>
+                        <span class="notification-time">2 mins ago</span>
                     </div>
                     <div class="notification-item">
-                        <p>Team meeting scheduled for 2:00 PM</p>
-                        <span class="notification-time">1 hour ago</span>
-                    </div>
-                    <div class="notification-item">
-                        <p>File uploaded: Sales_Report.xlsx</p>
-                        <span class="notification-time">3 hours ago</span>
-                    </div>
-                    <div class="notification-item">
-                        <p>Project deadline approaching</p>
-                        <span class="notification-time">Yesterday</span>
+                        <p>Task assigned by Bob Carter</p>
+                        <span class="notification-time">15 mins ago</span>
                     </div>
                 </div>
             </div>
-            <div class="company-name" id="companyName">Concinnity.Vision</div>
+            <div class="company-name">Concinnity.Vision</div>
             <div class="search-bar">
-                <input type="text" placeholder="Search" />
+                <input type="text" placeholder="Search">
                 <span class="search-icon">🔍</span>
             </div>
         </div>
         <div class="calendar-container">
             <div class="calendar-sidebar">
-                <button class="add-event-btn">+ Create Event</button>
+                <button class="add-event-btn">Add Event</button>
                 <div class="view-toggle">
-                    <button class="view-btn" data-view="month">Month</button>
-                    <button class="view-btn active" data-view="week">Week</button>
-                    <button class="view-btn" data-view="day">Day</button>
+                    <button class="view-btn active">Month</button>
+                    <button class="view-btn">Week</button>
+                    <button class="view-btn">Day</button>
                 </div>
                 <div class="mini-calendar">
                     <h3>April 2025</h3>
@@ -51,7 +42,7 @@
                         <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
                         <div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
                         <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
-                        <div>13</div><div>14</div><div>15</div><div class="today">16</div><div>17</div><div>18</div><div>19</div>
+                        <div>13</div><div>14</div><div class="today">15</div><div>16</div><div>17</div><div>18</div><div>19</div>
                         <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
                         <div>27</div><div>28</div><div>29</div><div>30</div><div></div><div></div><div></div>
                     </div>
@@ -61,160 +52,69 @@
                 <div class="calendar-header">
                     <h2>April 2025</h2>
                 </div>
-                <div id="monthView" class="calendar-view" style="display: none;">
+                <div class="calendar-view">
                     <div class="calendar-grid">
                         <div>Sunday</div><div>Monday</div><div>Tuesday</div><div>Wednesday</div><div>Thursday</div><div>Friday</div><div>Saturday</div>
-                        <div class="empty-day"></div><div class="empty-day"></div>
-                        <div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div>
-                        <div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div>
-                        <div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day today">16
-                            <div class="event meeting" data-tooltip="Team Meeting with Alice Johnson, Bob Carter">Team Meeting @ 10:00 AM</div>
-                        </div><div class="day">17</div><div class="day">18</div><div class="day">19</div>
-                        <div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23
-                            <div class="event deadline" data-tooltip="Project Deadline - Submit final report">Project Deadline @ 5:00 PM</div>
-                        </div><div class="day">24</div><div class="day">25</div><div class="day">26</div>
-                        <div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="empty-day"></div><div class="empty-day"></div><div class="empty-day"></div>
-                    </div>
-                </div>
-                <div id="weekView" class="calendar-view">
-                    <div class="calendar-week-grid">
-                        <!-- Header row -->
-                        <div class="time-slot"></div>
-                        <div>Sun 13</div><div>Mon 14</div><div>Tue 15</div><div class="today-column">Wed 16</div><div>Thu 17</div><div>Fri 18</div><div>Sat 19</div>
-                        <!-- Time slots with empty cells for each day -->
-                        <div class="time-slot">12:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">1:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">2:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">3:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">4:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">5:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">6:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">7:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">8:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">9:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">10:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">11:00 AM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">12:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">1:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">2:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">3:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">4:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">5:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">6:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">7:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">8:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">9:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">10:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <div class="time-slot">11:00 PM</div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        <!-- Event placed outside the grid flow -->
-                        <div class="week-event meeting" data-row="11" data-column="5" data-tooltip="Team Meeting with Alice Johnson, Bob Carter">Team Meeting (10:00 AM - 11:00 AM)</div>
-                    </div>
-                    <div class="today-schedule">
-                        <h3>Today's Schedule (Wed 16)</h3>
-                        <div class="schedule-item">
-                            <p>Team Meeting, 10:00 AM - 11:00 AM, with Alice Johnson, Bob Carter</p>
+                        <div class="empty-day"></div>
+                        <div class="empty-day"></div>
+                        <div class="day">1</div>
+                        <div class="day">2</div>
+                        <div class="day">3</div>
+                        <div class="day">4</div>
+                        <div class="day">5</div>
+                        <div class="day">6</div>
+                        <div class="day">7</div>
+                        <div class="day">8</div>
+                        <div class="day">9</div>
+                        <div class="day">10</div>
+                        <div class="day">11</div>
+                        <div class="day">12</div>
+                        <div class="day">13</div>
+                        <div class="day">14</div>
+                        <div class="day today">15
+                            <div class="event meeting" data-tooltip="Team Meeting with Alice Johnson">Team Meeting</div>
                         </div>
+                        <div class="day">16</div>
+                        <div class="day">17</div>
+                        <div class="day">18</div>
+                        <div class="day">19</div>
+                        <div class="day">20</div>
+                        <div class="day">21</div>
+                        <div class="day">22</div>
+                        <div class="day">23
+                            <div class="event deadline" data-tooltip="Project Deadline">Project Deadline</div>
+                        </div>
+                        <div class="day">24</div>
+                        <div class="day">25</div>
+                        <div class="day">26</div>
+                        <div class="day">27</div>
+                        <div class="day">28</div>
+                        <div class="day">29</div>
+                        <div class="day">30</div>
+                        <div class="empty-day"></div>
+                        <div class="empty-day"></div>
+                        <div class="empty-day"></div>
+                        <div class="empty-day"></div>
                     </div>
                 </div>
-                <div id="dayView" class="calendar-view" style="display: none;">
-                    <div class="calendar-day-grid">
-                        <div class="time-slot">9:00 AM</div><div></div>
-                        <div class="time-slot">10:00 AM</div>
-                        <div class="day-event meeting" data-tooltip="Team Meeting with Alice Johnson, Bob Carter">Team Meeting (10:00 AM - 11:00 AM)</div>
-                        <div class="time-slot">11:00 AM</div><div></div>
-                        <div class="time-slot">12:00 PM</div><div></div>
+                <div class="today-schedule">
+                    <h3>Today's Schedule</h3>
+                    <div class="schedule-item">
+                        <p>Team Meeting, 10:00 AM - 11:00 AM, with Alice Johnson</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="nav-bar">
-            <a href="dashboard.html" class="nav-item">🏠<br>Dashboard</a>
-            <a href="team.html" class="nav-item">👥<br>Team</a>
-            <a href="messages.html" class="nav-item">💬<br>Messages</a>
-            <a href="calendar.html" class="nav-item">📅<br>Calendar</a>
-            <a href="files.html" class="nav-item">📁<br>Files</a>
-            <a href="time-clock.html" class="nav-item">⏰<br>Time Clock</a>
-            <a href="account.html" class="nav-item">👤<br>Account</a>
+            <a href="dashboard.html" class="nav-item">Dashboard</a>
+            <a href="team.html" class="nav-item">Team</a>
+            <a href="messages.html" class="nav-item">Messages</a>
+            <a href="calendar.html" class="nav-item">Calendar</a>
+            <a href="files.html" class="nav-item">Files</a>
+            <a href="time_clock.html" class="nav-item">Time Clock</a>
+            <a href="tasks.html" class="nav-item">Tasks</a>
+            <a href="me.html" class="nav-item">Me</a>
         </div>
     </div>
-    <script>
-        // Retrieve company name from localStorage
-        const companyName = localStorage.getItem('companyName') || 'Concinnity.Vision';
-        document.getElementById('companyName').textContent = companyName;
-
-        // Toggle calendar views with loading animation
-        const viewButtons = document.querySelectorAll('.view-btn');
-        const views = {
-            month: document.getElementById('monthView'),
-            week: document.getElementById('weekView'),
-            day: document.getElementById('dayView')
-        };
-        const calendarMain = document.querySelector('.calendar-main');
-
-        viewButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const view = button.getAttribute('data-view');
-
-                // Add loading animation
-                calendarMain.classList.add('loading');
-
-                // Hide all views and remove active class
-                Object.values(views).forEach(v => v.style.display = 'none');
-                viewButtons.forEach(btn => btn.classList.remove('active'));
-
-                // Simulate loading delay (remove this in production if not needed)
-                setTimeout(() => {
-                    // Show selected view and add active class
-                    views[view].style.display = 'block';
-                    button.classList.add('active');
-
-                    // Remove loading animation
-                    calendarMain.classList.remove('loading');
-
-                    // Reposition events in Week view after view change
-                    if (view === 'week') {
-                        positionWeekEvents();
-                    }
-                }, 500); // 500ms delay for loading animation
-            });
-        });
-
-        // Position events in the Week view
-        function positionWeekEvents() {
-            document.querySelectorAll('.week-event').forEach(event => {
-                const row = parseInt(event.getAttribute('data-row'));
-                const column = parseInt(event.getAttribute('data-column'));
-                const grid = document.querySelector('.calendar-week-grid');
-                const cell = grid.children[(row - 1) * 8 + column]; // Calculate the target cell
-
-                if (cell) {
-                    const rect = cell.getBoundingClientRect();
-                    const gridRect = grid.getBoundingClientRect();
-                    event.style.position = 'absolute';
-                    event.style.top = `${rect.top - gridRect.top}px`;
-                    event.style.left = `${rect.left - gridRect.left}px`;
-                    event.style.width = `${rect.width}px`;
-                    event.style.height = `${rect.height}px`;
-                }
-            });
-        }
-
-        // Initial positioning for Week view
-        positionWeekEvents();
-
-        // Toggle notifications dropdown
-        const notifications = document.querySelector('.notifications');
-        const dropdown = document.querySelector('.notifications-dropdown');
-        notifications.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
-        });
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!notifications.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
-        });
-    </script>
 </body>
 </html>

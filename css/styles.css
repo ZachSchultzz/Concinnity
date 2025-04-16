@@ -473,13 +473,6 @@ button:hover {
     outline: none;
 }
 
-.team-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
 .team-card {
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02));
     border-radius: 10px;
@@ -738,7 +731,7 @@ button:hover {
 .chat-input input {
     flex: 1;
     padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.1); /* Changed from rgba(255, 255, 0, 0.1) to remove yellow */
+    background: rgba(255, 255, 255, 0.1);
     border: none;
     border-radius: 5px;
     color: white;
@@ -767,8 +760,8 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Account Tab Styles */
-.account-container {
+/* Me Tab Styles (formerly Account) */
+.me-container {
     width: 80%;
     max-width: 800px;
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(0, 247, 209, 0.02));
@@ -781,24 +774,100 @@ button:hover {
     gap: 1rem;
 }
 
-.account-details {
+.profile-section {
     text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 1rem;
+    width: 100%;
 }
 
-.account-details h3 {
+.profile-section h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-.account-details p {
+.profile-section p {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
     margin: 0.2rem 0;
 }
 
-.account-actions {
+.projects-section,
+.tasks-section,
+.saved-files-section,
+.recent-activity-section,
+.settings-section {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.projects-section h3,
+.tasks-section h3,
+.saved-files-section h3,
+.recent-activity-section h3,
+.settings-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #00f7d1;
+}
+
+.project-item,
+.task-item,
+.file-item,
+.activity-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.project-item:hover,
+.task-item:hover,
+.file-item:hover,
+.activity-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.01);
+}
+
+.project-item h4,
+.task-item h4 {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+}
+
+.project-item p,
+.task-item p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.2rem 0;
+}
+
+.task-item.completed {
+    background: rgba(0, 247, 209, 0.1);
+}
+
+.activity-item p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.activity-time {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 0.2rem;
+    display: block;
+}
+
+.settings-section {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .action-btn {
@@ -809,11 +878,22 @@ button:hover {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
 }
 
 .action-btn:hover {
     background: #00d1b2;
     transform: scale(1.05);
+}
+
+.logout-btn {
+    background: #ff6b6b;
+}
+
+.logout-btn:hover {
+    background: #e55a5a;
 }
 
 /* Calendar Container */

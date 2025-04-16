@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages - Concinnity.Vision</title>
+    <title>Tasks - Concinnity.Vision</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -29,30 +29,20 @@
             </div>
         </div>
         <div class="main-content">
-            <h2>Messages</h2>
-            <div class="chat-container">
-                <div class="chat-sidebar">
-                    <h3>Chats</h3>
-                    <ul>
-                        <li class="chat-user">Alice Johnson</li>
-                        <li class="chat-user">Bob Carter</li>
-                        <li class="chat-user">Clara Davis</li>
-                    </ul>
-                </div>
-                <div class="chat-window">
-                    <div id="chatMessages">
-                        <div class="message received">
-                            <p>Hey, how's the project going?</p>
-                            <span class="message-time">10:30 AM</span>
-                        </div>
-                        <div class="message sent">
-                            <p>Going well! Just finishing up some tasks.</p>
-                            <span class="message-time">10:32 AM</span>
-                        </div>
+            <h2>Tasks</h2>
+            <div class="tasks-container">
+                <button class="add-task-btn">Add Task</button>
+                <div class="task-list">
+                    <div class="task-item">
+                        <h4>Design API Endpoints</h4>
+                        <p>Due: April 20, 2025</p>
+                        <p>Status: In Progress</p>
+                        <button class="complete-task-btn">Mark as Complete</button>
                     </div>
-                    <div class="chat-input">
-                        <input type="text" placeholder="Type a message">
-                        <button>Send</button>
+                    <div class="task-item completed">
+                        <h4>Write Unit Tests</h4>
+                        <p>Due: April 10, 2025</p>
+                        <p>Status: Completed</p>
                     </div>
                 </div>
             </div>
