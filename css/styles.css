@@ -6,7 +6,9 @@
 }
 
 body {
-    background: url('https://www.transparenttextures.com/patterns/stardust.png'), #1a1a1a;
+    background: url('../assets/Login Background.png') no-repeat center center fixed;
+    background-size: cover; /* Ensure the background covers the entire viewport */
+    background-color: #d3d3d3; /* Fallback color (light gray) in case the image fails to load */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,23 +19,25 @@ body {
 
 .container {
     text-align: center;
+    background: transparent; /* Ensure no background color is applied */
 }
 
 h1 {
     font-size: 3rem;
     margin-bottom: 2rem;
+    color: white; /* Ensure the header is white */
 }
 
 h1 span {
-    color: #00f7d1;
+    color: #ffffff; /* Override the previous cyan color for "Concinnity" to white */
     font-weight: bold;
 }
 
 form {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     padding: 2rem;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Apply blur effect to the background */
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -53,14 +57,16 @@ input {
     border-bottom: 1px solid white;
     color: white;
     font-size: 1rem;
+    text-align: center; /* Center the placeholder and typed text */
 }
 
 input::placeholder {
     color: rgba(255, 255, 255, 0.7);
+    text-align: center; /* Ensure the placeholder is centered (for some browsers) */
 }
 
 button {
-    background: #00f7d1;
+    background: #ffffff; /* White background for the login button */
     border: none;
     padding: 0.75rem;
     border-radius: 25px;
@@ -69,22 +75,28 @@ button {
     cursor: pointer;
     margin-top: 1rem;
     transition: background 0.3s ease;
+    align-self: center; /* Center the button */
+    width: 100px; /* Fixed width to match the design */
 }
 
 button:hover {
-    background: #00d1b2;
+    background: #e0e0e0; /* Slightly darker white on hover */
 }
 
 .forgot-link {
-    color: #00f7d1;
+    color: #ffffff; /* White color for the forgot password link */
     font-size: 0.9rem;
     text-decoration: none;
     margin-top: 0.5rem;
+    text-align: center; /* Center the link */
 }
 
 .forgot-link:hover {
     text-decoration: underline;
 }
+
+/* Rest of the styles.css remains unchanged */
+    * 
 
 .dashboard-container {
     display: flex;
