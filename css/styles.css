@@ -1,4 +1,4 @@
-* {
+*  {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,19 +18,30 @@ body {
 }
 
 .container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children horizontally */
     background: transparent; /* Ensure no background color is applied */
 }
 
-h1 {
-    font-size: 3rem;
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 2rem;
-    color: white; /* Ensure the header is white */
 }
 
-h1 span {
-    color: #ffffff; /* Override the previous cyan color for "Concinnity" to white */
+.welcome-text {
+    font-size: 3rem; /* Slightly smaller than Concinnity */
+    color: white;
+}
+
+.concinnity-text {
+    font-size: 5rem; /* Larger than Welcome to */
+    font-style: italic;
+    color: white;
     font-weight: bold;
+    transform: scaleX(1.1); /* Extend width slightly more than Welcome to */
 }
 
 form {
@@ -94,8 +105,6 @@ button:hover {
 .forgot-link:hover {
     text-decoration: underline;
 }
-
-/* Rest of the styles.css remains unchanged */
     * 
 
 .dashboard-container {
